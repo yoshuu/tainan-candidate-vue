@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
   <main class="tainan-three-page">
     <div class="container p-0">
@@ -10,7 +12,7 @@
           ></div>
           <img
             class="tainan-three-img"
-            src="../images/tainan-cadidate-without-name.png"
+            src="@/assets/images/tainan-cadidate-without-name.png"
             alt="tainan-total"
           />
           <div
@@ -18,28 +20,32 @@
             data-bs-toggle="modal"
             data-bs-target="#kiang-modal"
           >
-            <img src="../images/kiang-name.png" alt="Kiang candidate photo" />
+            <img
+              src="@/assets/images/kiang-name.png"
+              alt="Kiang candidate photo"
+            />
           </div>
           <div
             class="people-name kuo-name"
             data-bs-toggle="modal"
             data-bs-target="#kuo-modal"
           >
-            <img src="../images/kuo-name.png" alt="Kuo candidate photo" />
+            <img src="@/assets/images/kuo-name.png" alt="Kuo candidate photo" />
           </div>
           <div
             class="people-name ping-name"
             data-bs-toggle="modal"
             data-bs-target="#ping-modal"
           >
-            <img src="../images/ping-name.png" alt="Ping candidate photo" />
+            <img
+              src="@/assets/images/ping-name.png"
+              alt="Ping candidate photo"
+            />
           </div>
         </div>
       </div>
       <div class="modal fade kiang-dialog" id="kiang-modal" tabindex="-1">
-        <div
-          class="modal-dialog modal-fullscreen-sm-down modal-lg modal-dialog-centered"
-        >
+        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
           <div class="modal-mobile">
             <div class="modal-content">
               <div class="modal-header">
@@ -52,7 +58,7 @@
               <div class="modal-body">
                 <div class="content">
                   <div class="people-img-container">
-                    <img src="../images/image 4.png" />
+                    <img src="@/assets/images/image 4.png" />
                   </div>
                   <h2>
                     用科技找回台南 400 年榮景，江明宗參選北區中西區議員宣言
@@ -85,7 +91,7 @@
                       target="_blank"
                       href="https://www.facebook.com/k.olc.tw/"
                     >
-                      <img src="../images/facebook.png" alt="facebook" />
+                      <img src="@/assets/images/facebook.png" alt="facebook" />
                       <p class="facebook-text">透過臉書(FB)聯絡江明宗</p>
                     </a>
                   </div>
@@ -106,7 +112,7 @@
               <div class="modal-body">
                 <div class="content">
                   <div class="people-img-container">
-                    <img src="../images/image 4.png" />
+                    <img src="@/assets/images/image 4.png" />
                   </div>
                   <h3>
                     用科技找回台南 400 年榮景，江明宗參選北區中西區議員宣言
@@ -139,7 +145,7 @@
                       target="_blank"
                       href="https://www.facebook.com/k.olc.tw/"
                     >
-                      <img src="../images/facebook.png" alt="facebook" />
+                      <img src="@/assets/images/facebook.png" alt="facebook" />
                       <p class="facebook-text">透過臉書(FB)聯絡江明宗</p>
                     </a>
                   </div>
@@ -150,9 +156,7 @@
         </div>
       </div>
       <div class="modal fade kuo-dialog" id="kuo-modal" tabindex="-1">
-        <div
-          class="modal-dialog modal-fullscreen-sm-down modal-lg modal-dialog-centered"
-        >
+        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
           <div class="modal-laptop">
             <div class="modal-content">
               <div class="modal-header">
@@ -166,7 +170,7 @@
               <div class="modal-body">
                 <div class="content">
                   <div class="people-img-container">
-                    <img src="../images/image 5.png" />
+                    <img src="@/assets/images/image 5.png" />
                   </div>
                   <h3>請益各領域專家 融合自身所看所聽 研擬最適合在地的政見</h3>
                   <p>
@@ -224,7 +228,7 @@
                       class="facebook-button"
                       href="https://www.facebook.com/kuomin0803"
                     >
-                      <img src="../images/facebook.png" alt="facebook" />
+                      <img src="@/assets/images/facebook.png" alt="facebook" />
                       <p class="facebook-text">透過臉書(FB)聯絡江國銘</p>
                     </a>
                   </div>
@@ -244,7 +248,7 @@
               <div class="modal-body">
                 <div class="content">
                   <div class="people-img-container">
-                    <img class="people" src="../images/image 5.png" />
+                    <img class="people" src="@/assets/images/image 5.png" />
                   </div>
                   <h2>請益各領域專家 融合自身所看所聽 研擬最適合在地的政見</h2>
                   <p>
@@ -302,7 +306,7 @@
                       class="facebook-button"
                       href="https://www.facebook.com/kuomin0803"
                     >
-                      <img src="../images/facebook.png" alt="facebook" />
+                      <img src="@/assets/images/facebook.png" alt="facebook" />
                       <p class="facebook-text">透過臉書(FB)聯絡江國銘</p>
                     </a>
                   </div>
@@ -313,9 +317,7 @@
         </div>
       </div>
       <div class="modal fade ping-dialog" id="ping-modal" tabindex="-1">
-        <div
-          class="modal-dialog modal-fullscreen-sm-down modal-lg modal-dialog-centered"
-        >
+        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
           <div class="modal-laptop">
             <div class="modal-content">
               <div class="modal-header">
@@ -329,7 +331,7 @@
               <div class="modal-body">
                 <div class="content">
                   <div class="people-img-container">
-                    <img src="../images/image 6.png" />
+                    <img src="@/assets/images/image 6.png" />
                   </div>
                   <h3>
                     超越藍綠新世代．永康向前衝
@@ -350,7 +352,7 @@
                       class="facebook-button"
                       href="https://www.facebook.com/pingtsung1011/"
                     >
-                      <img src="../images/facebook.png" alt="facebook" />
+                      <img src="@/assets/images/facebook.png" alt="facebook" />
                       <p class="facebook-text">透過臉書(FB)聯絡江品璁</p>
                     </a>
                   </div>
@@ -370,7 +372,7 @@
               <div class="modal-body">
                 <div class="content">
                   <div class="people-img-container">
-                    <img src="../images/image 6.png" />
+                    <img src="@/assets/images/image 6.png" />
                   </div>
                   <h2>
                     超越藍綠新世代．永康向前衝
@@ -392,7 +394,7 @@
                       class="facebook-button"
                       href="https://www.facebook.com/pingtsung1011/"
                     >
-                      <img src="../images/facebook.png" alt="facebook" />
+                      <img src="@/assets/images/facebook.png" alt="facebook" />
                       <p class="facebook-text">透過臉書(FB)聯絡江品璁</p>
                     </a>
                   </div>
@@ -431,3 +433,369 @@
     </div>
   </main>
 </template>
+
+<style scoped lang="scss">
+%flexCenter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+.tainan-three-page .container {
+  @media (min-width: 992px) {
+    height: calc(100vh - 77px);
+    overflow: hidden;
+  }
+
+  @extend %flexCenter;
+}
+
+.tainan-container {
+  position: relative;
+  @media (min-width: 1920px) {
+    height: calc(100vh - 77px);
+  }
+}
+
+.tainan-three {
+  margin-top: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  transform: translateY(1.8%);
+
+  &:hover {
+    @keyframes bounceName {
+      from {
+        transform: translateY(0px);
+        animation-timing-function: ease-out;
+      }
+
+      50% {
+        transform: translateY(-3px);
+        animation-timing-function: ease-in;
+      }
+
+      to {
+        transform: translateY(0px);
+        animation-timing-function: ease-in-out;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    margin-top: 0;
+    transform: translateY(16.8%);
+    overflow: initial;
+  }
+
+  @media (min-width: 1920px) {
+    transform: translateY(1.8%);
+  }
+
+  .tainan-three-img {
+    object-fit: contain;
+    align-self: center;
+
+    @include size(120%, 120%);
+
+    @media (min-width: 992px) {
+      @include size(100%, calc(100vh - 77px));
+    }
+
+    @media (min-width: 1920px) {
+      @include size(100%, 100%);
+    }
+  }
+}
+
+// map-button
+.map-box {
+  // 1280px以上再使用absolute，以下讓他使用normal flow
+  align-self: flex-end;
+  width: 153px;
+  height: 130px;
+
+  @media (min-width: 1280px) {
+    position: absolute;
+    right: -21%;
+    top: 10%;
+  }
+
+  @media (min-width: 1920px) {
+    width: 245px;
+    height: 215px;
+    right: -21%;
+    top: 10%;
+  }
+
+  background-image: url(@/assets/images/mapButton.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  &:hover {
+    background-image: url(@/assets/images/mapButtonHover.png);
+  }
+}
+
+.facebook-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 242px;
+  height: 41px;
+  background-color: $facebook;
+  border-radius: 4px;
+  color: #fff;
+  line-height: 41px;
+  border: none;
+
+  img {
+    padding-left: 6px;
+  }
+  .facebook-text {
+    padding-right: 17px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23.17px;
+  }
+}
+
+// people name distance adjustment
+.people-name {
+  position: absolute;
+  cursor: pointer;
+  animation-name: bounceName;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.kiang-name {
+  top: 75%;
+  left: 78%;
+
+  @media (min-width: 992px) {
+    top: 70%;
+    left: 73%;
+  }
+  img {
+    @include size(65%, 65%);
+    @media (min-width: 1920px) {
+      @include size(90%, 90%);
+    }
+  }
+}
+
+.kuo-name {
+  top: 70%;
+  left: 43%;
+
+  @media (min-width: 992px) {
+    top: 66%;
+    left: 44%;
+  }
+  img {
+    @include size(40%, 40%);
+    @media (min-width: 576px) {
+      @include size(65%, 65%);
+    }
+    @media (min-width: 1920px) {
+      @include size(90%, 90%);
+    }
+  }
+}
+
+.ping-name {
+  top: 75%;
+  left: 8%;
+
+  @media (min-width: 992px) {
+    top: 70%;
+    left: 13%;
+  }
+  img {
+    @include size(40%, 40%);
+    @media (min-width: 576px) {
+      @include size(70%, 70%);
+    }
+    @media (min-width: 1920px) {
+      @include size(90%, 90%);
+    }
+  }
+}
+
+// 叉叉
+.close {
+  width: 20px;
+  height: 20px;
+  background-image: url("@/assets/images/black-cross.png");
+
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  @media (min-width: 992px) {
+    background-image: url("@/assets/images/Vector.png");
+  }
+
+  &--black {
+    width: 20px;
+    height: 20px;
+    background-image: url("@/assets/images/black-cross.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+// bootstrap popuping effect
+.candidate,
+.kiang-dialog,
+.kuo-dialog,
+.ping-dialog {
+  .modal-content {
+    border-radius: 0;
+  }
+  .modal-laptop {
+    display: none;
+    @media (min-width: 992px) {
+      display: block;
+      .modal-content {
+        .modal-header {
+          border-radius: 0;
+          position: relative;
+          height: 60px;
+          background-color: $secondary-dark;
+
+          h2 {
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+          }
+          button {
+            border: 1px solid transparent;
+            background-color: transparent;
+
+            &:focus-visible {
+              outline: 1px solid transparent;
+            }
+          }
+        }
+
+        .modal-body {
+          background-color: #fff;
+          padding: 20px 40px;
+
+          .people-img-container {
+            img {
+              float: left;
+              margin-right: 16px;
+            }
+          }
+
+          h3 {
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 24px;
+          }
+
+          p {
+            line-height: 21.27px;
+            font-size: 14px;
+          }
+
+          .facebook-container {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .modal-mobile {
+    .modal-content {
+      background-color: $secondary-light;
+      border-radius: 0;
+
+      .modal-header {
+        padding: 10px 20px;
+        button {
+          border: 1px solid transparent;
+          background-color: transparent;
+
+          &:focus-visible {
+            outline: 1px solid transparent;
+          }
+        }
+      }
+
+      .modal-body {
+        padding: 20px;
+      }
+
+      .content {
+        .people-img-container {
+          text-align: center;
+          margin-bottom: 20px;
+          img {
+            width: 150px;
+            height: 150px;
+          }
+        }
+        h2 {
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 15px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 23.17px;
+        }
+
+        .facebook-container {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          margin: 10px 0;
+        }
+      }
+    }
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+.street-map-dialog {
+  .modal-body,
+  .modal-header {
+    button {
+      border: 1px solid transparent;
+      background-color: transparent;
+
+      &:focus-visible {
+        outline: 1px solid transparent;
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .modal-header {
+    padding: 10px 20px;
+  }
+}
+</style>
