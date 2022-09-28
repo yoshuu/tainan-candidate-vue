@@ -1,88 +1,217 @@
 <script setup>
+import { ref, computed } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import FrontPage from "./views/FrontPage.vue";
+import DistrictMapPage from "./views/DistrictMapPage.vue";
+import RecordOfStreetMapPage from "./views/RecordOfStreetMapPage.vue";
+import SpeechRecordPage from "./views/SpeechRecordPage.vue";
+import PastWorksPage from "./views/PastWorksPage.vue";
+import RelatedNewsPage from "./views/RelatedNewsPage.vue";
+import TainanThreePage from "./views/TainanThreePage.vue";
 </script>
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+    <div class="container p-0">
+      <nav class="navbar-desktop navbar navbar-expand-lg">
+        <div class="container-fluid p-0">
+          <a class="navbar-brand candidate-logo" href="#front-page-router"
+            ><img
+              src="@/assets/images/navbar-candidate-logo.png"
+              alt="navbar-candidate-logo"
+          /></a>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mb-2 mb-lg-0 me-2 mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" to="#/">誰是江明宗</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" to="#/district-map-page">選區里民資料</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#record-of-street-map-page-router"
+                  >掃街紀錄</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#past-record-page-router">過往紀錄</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#tainan-three-page-router"
+                  >台南三江街講</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  target="_blank"
+                  class="nav-link"
+                  href="https://www.facebook.com/k.olc.tw/"
+                  >透過臉書聯絡江明宗</a
+                >
+              </li>
+            </ul>
+            <a
+              class="navbar-brand party-logo"
+              href="https://www.tpp.org.tw/"
+              target="_blank"
+              ><img
+                src="@/assets/images/navbar-party-logo.png"
+                alt="navbar-candidate-logo"
+            /></a>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar-mobile navbar">
+        <div class="brand-container">
+          <a class="navbar-brand candidate-logo" href="#front-page-router"
+            ><img
+              src="@/assets/images/navbar-candidate-logo.png"
+              alt="navbar-candidate-logo"
+          /></a>
+          <a class="navbar-brand party-logo" href="https://www.tpp.org.tw/"
+            ><img
+              src="@/assets/images/navbar-party-logo.png"
+              alt="navbar-candidate-logo"
+          /></a>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#front-page-router"
+              >誰是江明宗</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#district-map-page-router"
+              >選區里民資料</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#record-of-street-map-page-router"
+              >掃街紀錄</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#past-record-page-router">過往紀錄</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tainan-three-page-router"
+              >台南三江街講</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              target="_blank"
+              class="nav-link"
+              href="https://www.facebook.com/k.olc.tw/"
+              >透過臉書聯絡江明宗</a
+            >
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
-
+  <main>
+    <FrontPage></FrontPage>
+    <DistrictMapPage></DistrictMapPage>
+    <RecordOfStreetMapPage></RecordOfStreetMapPage>
+    <PastWorksPage></PastWorksPage>
+    <SpeechRecordPage></SpeechRecordPage>
+    <RelatedNewsPage></RelatedNewsPage>
+    <TainanThreePage></TainanThreePage>
+  </main>
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.container {
+  max-width: 1920px;
+}
+
 header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+  // 一起的設定
+  background-color: $header;
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+  .container .navbar-nav .nav-link {
+    font-weight: 700;
+    font-size: 14px;
+    color: black;
+    padding: 5px 15px;
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+    &:hover {
+      background-color: #30363a;
+      color: white;
+    }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
+    @media (min-width: 992px) {
+      padding: 15px 20px;
+      font-size: 18px;
+    }
+  }
+  .navbar-brand {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    height: 56px;
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
+    img {
+      object-fit: contain;
+      height: 100%;
+    }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
+    .candidate-logo {
+      width: 130px;
+    }
 
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    .party-logo {
+      @media (min-width: 992px) {
+        display: inline-block;
+      }
+    }
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .navbar-desktop {
+    display: none;
+    @media (min-width: 992px) {
+      display: flex;
+    }
+
+    background-color: $header;
+    padding: 10px 40px;
+
+    .navbar-collapse {
+      justify-content: end;
+    }
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+  // 手機的設定
+  .navbar-mobile {
+    display: block;
+    @media (min-width: 992px) {
+      display: none;
+    }
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+    &.navbar {
+      padding: 0;
+    }
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+    .brand-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 7px 12px;
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-item {
+        flex-shrink: 0;
+      }
+    }
   }
 }
 </style>
