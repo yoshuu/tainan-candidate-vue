@@ -1,13 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
 import { RouterLink, RouterView } from "vue-router";
-import FrontPage from "./views/FrontPage.vue";
-import DistrictMapPage from "./views/DistrictMapPage.vue";
-import RecordOfStreetMapPage from "./views/RecordOfStreetMapPage.vue";
-import SpeechRecordPage from "./views/SpeechRecordPage.vue";
-import PastWorksPage from "./views/PastWorksPage.vue";
-import RelatedNewsPage from "./views/RelatedNewsPage.vue";
-import TainanThreePage from "./views/TainanThreePage.vue";
 </script>
 
 <template>
@@ -15,30 +8,35 @@ import TainanThreePage from "./views/TainanThreePage.vue";
     <div class="container p-0">
       <nav class="navbar-desktop navbar navbar-expand-lg">
         <div class="container-fluid p-0">
-          <a class="navbar-brand candidate-logo" href="#front-page-router"
+          <RouterLink class="navbar-brand candidate-logo" to="/"
             ><img
               src="@/assets/images/navbar-candidate-logo.png"
               alt="navbar-candidate-logo"
-          /></a>
+          /></RouterLink>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mb-2 mb-lg-0 me-2 mt-2 mt-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" to="#/">誰是江明宗</a>
+                <RouterLink class="nav-link" to="/">誰是江明宗</RouterLink>
               </li>
               <li class="nav-item">
-                <a class="nav-link" to="#/district-map-page">選區里民資料</a>
+                <RouterLink class="nav-link" to="/DistrictMapPage"
+                  >選區里民資料</RouterLink
+                >
               </li>
+
               <li class="nav-item">
-                <a class="nav-link" href="#record-of-street-map-page-router"
-                  >掃街紀錄</a
+                <RouterLink class="nav-link" to="/RecordOfStreetMapPage"
+                  >掃街紀錄</RouterLink
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#past-record-page-router">過往紀錄</a>
+                <RouterLink class="nav-link" to="/SpeechRecordPage"
+                  >過往紀錄</RouterLink
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#tainan-three-page-router"
-                  >台南三江街講</a
+                <RouterLink class="nav-link" to="/TainanThreePage"
+                  >台南三江街講</RouterLink
                 >
               </li>
               <li class="nav-item">
@@ -63,11 +61,11 @@ import TainanThreePage from "./views/TainanThreePage.vue";
       </nav>
       <nav class="navbar-mobile navbar">
         <div class="brand-container">
-          <a class="navbar-brand candidate-logo" href="#front-page-router"
+          <RouterLink class="navbar-brand candidate-logo" to="/"
             ><img
               src="@/assets/images/navbar-candidate-logo.png"
               alt="navbar-candidate-logo"
-          /></a>
+          /></RouterLink>
           <a class="navbar-brand party-logo" href="https://www.tpp.org.tw/"
             ><img
               src="@/assets/images/navbar-party-logo.png"
@@ -76,26 +74,26 @@ import TainanThreePage from "./views/TainanThreePage.vue";
         </div>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#front-page-router"
-              >誰是江明宗</a
+            <RouterLink class="nav-link" to="/">誰是江明宗</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/DistrictMapPage"
+              >選區里民資料</RouterLink
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#district-map-page-router"
-              >選區里民資料</a
+            <RouterLink class="nav-link" to="/RecordOfStreetMapPage"
+              >掃街紀錄</RouterLink
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#record-of-street-map-page-router"
-              >掃街紀錄</a
+            <RouterLink class="nav-link" to="/SpeechRecordPage"
+              >過往紀錄</RouterLink
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#past-record-page-router">過往紀錄</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#tainan-three-page-router"
-              >台南三江街講</a
+            <RouterLink class="nav-link" to="/TainanThreePage"
+              >台南三江街講</RouterLink
             >
           </li>
           <li class="nav-item">
@@ -110,15 +108,6 @@ import TainanThreePage from "./views/TainanThreePage.vue";
       </nav>
     </div>
   </header>
-  <main>
-    <FrontPage></FrontPage>
-    <DistrictMapPage></DistrictMapPage>
-    <RecordOfStreetMapPage></RecordOfStreetMapPage>
-    <PastWorksPage></PastWorksPage>
-    <SpeechRecordPage></SpeechRecordPage>
-    <RelatedNewsPage></RelatedNewsPage>
-    <TainanThreePage></TainanThreePage>
-  </main>
   <RouterView />
 </template>
 
