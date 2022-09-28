@@ -65,7 +65,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button
-                    class="close--black"
+                    class="cross--black"
                     type="button"
                     data-bs-dismiss="modal"
                   ></button>
@@ -109,25 +109,8 @@
 </template>
 
 <style lang="scss" scoped>
-%flexCenter {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-  max-width: 1920px;
-}
-
-.front-page .container {
-  @media (min-width: 992px) {
-    height: calc(100vh - 77px);
-    overflow: hidden;
-  }
-
-  @extend %flexCenter;
-}
-
+@import "../assets/scss/components/_cross";
+@import "../assets/scss/components/_declaration";
 .front-page-container {
   display: flex;
   height: calc(100vh - 77px);
@@ -194,42 +177,52 @@
   }
 }
 
-// delcarlation
+// bootstrap
+.candidate {
+  .modal-content {
+    background-color: $secondary-light;
+    border-radius: 0;
 
-.declaration {
-  border: 10px solid $secondary-middle;
-  background-color: $secondary-light;
-  position: relative;
-  line-height: 23.17px;
+    .modal-header {
+      padding: 10px 20px;
+      button {
+        border: 1px solid transparent;
+        background-color: transparent;
 
-  .oneTape {
-    position: absolute;
-    top: -30px;
-    left: -40px;
-  }
+        &:focus-visible {
+          outline: 1px solid transparent;
+        }
+      }
+    }
 
-  .twoTape {
-    position: absolute;
-    bottom: -30px;
-    right: -40px;
-  }
-
-  .content-container {
-    height: calc(100vh - 200px);
-    overflow: scroll;
-    padding: 40px;
-
-    @media (min-width: 1920px) {
-      height: initial;
+    .modal-body {
+      padding: 20px;
     }
 
     .content {
+      .people-img-container {
+        text-align: center;
+        margin-bottom: 20px;
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
       h2 {
-        margin-bottom: 24px;
-        font-size: 26px;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 15px;
       }
       p {
         font-size: 16px;
+        line-height: 23.17px;
+      }
+
+      .facebook-container {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
       }
     }
   }
