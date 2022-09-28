@@ -1,4 +1,18 @@
-<script setup></script>
+<script setup>
+import { computed, ref } from "vue";
+import data from "../assets/JSON/data.json";
+
+const dataJson = ref(data);
+
+console.log(dataJson.value.data[0].ytVideos[0].link);
+
+function checkLength(array, index) {
+  if (array.length === 0) return "##";
+  if (array.length === 1 && index === 0) return array[0].link;
+  if (array.length === 1 && index === 1) return "##";
+  if (array.length === 2) return array[index].link;
+}
+</script>
 
 <template>
   <main>
@@ -21,7 +35,74 @@
             <h3>日期</h3>
             <h3>相關資源</h3>
           </div>
-          <div class="speech-record-container"></div>
+          <div class="speech-record-container">
+            <div
+              class="speech-record-desktop"
+              v-for="record in dataJson.data"
+              :key="record.slides.link"
+            >
+              <div class="speech-record-content">
+                <p>{{ record.slides.title }}</p>
+                <p>{{ record.active }}</p>
+                <p>{{ record.date }}</p>
+                <div class="resources-content">
+                  <a target="_blank" :href="record.slides.link" class="tags"
+                    >投影片下載</a
+                  >
+                  <a
+                    target="_blank"
+                    :href="checkLength(record.ytVideos, 0)"
+                    class="tags"
+                    >影片連結</a
+                  >
+                  <a
+                    target="_blank"
+                    :href="checkLength(record.ytVideos, 1)"
+                    class="tags"
+                    >影片連結</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="speech-record-mobile"
+              v-for="record in dataJson.data"
+              :key="record.slides.link"
+            >
+              <div class="speech-record-topicNcontent">
+                <h3>活動主題</h3>
+                <p>{{ record.slides.title }}</p>
+              </div>
+              <div class="speech-record-topicNcontent">
+                <h3>活動名稱</h3>
+                <p>{{ record.active }}</p>
+              </div>
+              <div class="speech-record-topicNcontent">
+                <h3>日期</h3>
+                <p>{{ record.date }}</p>
+              </div>
+              <div class="speech-record-resources-topicNcontent">
+                <h3>相關資源</h3>
+                <div class="resources-content">
+                  <a target="_blank" :href="record.slides.link" class="tags"
+                    >投影片下載</a
+                  >
+                  <a
+                    target="_blank"
+                    :href="checkLength(record.ytVideos, 0)"
+                    class="tags"
+                    >影片連結</a
+                  >
+                  <a
+                    target="_blank"
+                    :href="checkLength(record.ytVideos, 1)"
+                    class="tags"
+                    >影片連結</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -31,6 +112,7 @@
 <style lang="scss" scoped>
 @import "../assets/scss/layout/past-record-page";
 @import "../assets/scss/components/sticky-notes";
+@import "../assets/scss/components/tags";
 
 .speech-record {
   padding: 14px 20px;
