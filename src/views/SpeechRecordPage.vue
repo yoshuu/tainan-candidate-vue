@@ -18,12 +18,16 @@ function checkLength(array, index) {
   <main>
     <div class="past-record-container">
       <div class="toggle-box">
-        <a href="#past-record-page-router" class="toggle-speech-record"
-          >演講紀錄</a
+        <RouterLink class="toggle-speech-record" to="/SpeechRecordPage"
+          >演講紀錄</RouterLink
         >
-        <a href="#past-works-page-router" class="toggle-past-works">過去作品</a>
-        <a href="#related-news-page-router" class="toggle-related-news"
-          >相關新聞</a
+
+        <RouterLink class="toggle-past-works" to="/PastWorksPage"
+          >過去作品</RouterLink
+        >
+
+        <RouterLink class="toggle-related-news" to="/RelatedNewsPage"
+          >相關新聞</RouterLink
         >
       </div>
       <div class="sticky-notes">

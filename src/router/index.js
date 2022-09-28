@@ -45,6 +45,12 @@ const router = createRouter({
 
       component: () => import("@/views/RelatedNewsPage.vue"),
     },
+    {
+      path: "/PastWorksPage",
+      name: "PastWorksPage",
+
+      component: () => import("@/views/PastWorksPage.vue"),
+    },
   ],
 });
 
