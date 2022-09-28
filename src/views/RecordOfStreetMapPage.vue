@@ -25,22 +25,6 @@
 </template>
 
 <style scoped lang="scss">
-%flexCenter {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-  max-width: 1920px;
-}
-.record-of-street-map-page .container {
-  @media (min-width: 992px) {
-    height: calc(100vh - 77px);
-    overflow: hidden;
-  }
-  @extend %flexCenter;
-}
 .map-page {
   padding-top: 30px;
   margin: auto 0;
@@ -69,9 +53,13 @@
 }
 
 .district-text-container {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: white;
+
+  @media (min-width: 992px) {
+    font-size: 20px;
+  }
 }
 
 .street-instruct-sign {

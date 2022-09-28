@@ -1,26 +1,4 @@
-<script setup>
-// const districtIframe = document.querySelector(".district-map-iframe");
-// const districtInstruct = document.querySelector(".district-instruct-sign");
-
-// const streetIframe = document.querySelector(".street-map-iframe");
-// const streetInstruct = document.querySelector(".street-instruct-sign");
-
-// districtIframe.addEventListener("mouseenter", function (e) {
-//   districtInstruct.style.animationDuration = "0s";
-// });
-
-// districtIframe.addEventListener("mouseleave", function (e) {
-//   districtInstruct.style.animationDuration = "1s";
-// });
-
-// streetIframe.addEventListener("mouseenter", function (e) {
-//   streetInstruct.style.animationDuration = "0s";
-// });
-
-// streetIframe.addEventListener("mouseleave", function (e) {
-//   streetInstruct.style.animationDuration = "1s";
-// });
-</script>
+<script setup></script>
 
 <template>
   <main class="district-map-page">
@@ -48,22 +26,6 @@
 </template>
 
 <style scoped lang="scss">
-%flexCenter {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-  max-width: 1920px;
-}
-.district-map-page .container {
-  @media (min-width: 992px) {
-    height: calc(100vh - 77px);
-    overflow: hidden;
-  }
-  @extend %flexCenter;
-}
 .map-page {
   padding-top: 30px;
   margin: auto 0;
@@ -75,14 +37,12 @@
     flex-basis: 1003px;
   }
 
-  .district-map-container,
-  .street-map-container {
+  .district-map-container {
     position: relative;
     overflow: hidden;
     padding-top: calc(657 / 1066 * 100%);
 
-    .district-map-iframe,
-    .street-map-iframe {
+    .district-map-iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -94,13 +54,16 @@
 }
 
 .district-text-container {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: white;
+
+  @media (min-width: 992px) {
+    font-size: 20px;
+  }
 }
 
-.district-instruct-sign,
-.street-instruct-sign {
+.district-instruct-sign {
   padding-bottom: 15px;
   display: flex;
   flex-direction: column;
