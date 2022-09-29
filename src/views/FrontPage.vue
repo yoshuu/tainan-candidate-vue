@@ -129,16 +129,18 @@
 
 .candidate-image {
   position: relative;
-  align-self: center;
-
-  @media (min-width: 992px) {
-    align-self: flex-end;
-  }
+  align-self: flex-end;
 
   img {
     object-fit: contain;
     width: 100%;
-    height: calc(100vh - 77px);
+    height: calc(100vh - 150px);
+  }
+
+  @media (min-width: 992px) {
+    img {
+      height: calc(100vh - 77px);
+    }
   }
 }
 
