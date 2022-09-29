@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const navbarHeight = ref("");
+</script>
 
 <template>
   <main class="front-page">
@@ -113,7 +117,11 @@
 @import "../assets/scss/components/_declaration";
 .front-page-container {
   display: flex;
-  height: calc(100vh - 77px);
+  height: calc(100vh - 75px);
+
+  @media (min-width: 992px) {
+    height: calc(100vh - 77px);
+  }
 }
 
 .candidate {
@@ -129,16 +137,19 @@
 
 .candidate-image {
   position: relative;
-  align-self: center;
-
-  @media (min-width: 992px) {
-    align-self: flex-end;
-  }
+  align-self: flex-end;
 
   img {
     object-fit: contain;
     width: 100%;
-    height: calc(100vh - 77px);
+    // 讓圖片頂到最高
+    // height: calc(100vh - 75px);
+    // 小尺寸= 100vh - navbar高度 - 跟navbar距離的距離
+    height: calc(100vh - 75px - 94.19px);
+
+    @media (min-width: 992px) {
+      height: calc(100vh - 77px);
+    }
   }
 }
 
@@ -161,11 +172,11 @@
   // top: 50px;
 
   top: 5%;
-  right: 0;
+  left: 50%;
 
   @media (min-width: 390px) {
-    right: 0;
-    top: 10%;
+    left: 55%;
+    top: 5%;
   }
 
   img {

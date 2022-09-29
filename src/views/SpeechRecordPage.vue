@@ -1,10 +1,6 @@
 <script setup>
-import { computed, ref } from "vue";
 import data from "../assets/JSON/data.json";
-
-const dataJson = ref(data);
-
-console.log(dataJson.value.data[0].ytVideos[0].link);
+const dataJson = data;
 
 function checkLength(array, index) {
   if (array.length === 0) return "##";
