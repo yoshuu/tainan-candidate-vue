@@ -1,9 +1,16 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const isPlay = ref(true);
+</script>
 
 <template>
   <main class="district-map-page">
     <div class="map-page">
-      <div class="district-instruct-sign">
+      <div
+        :class="isPlay ? 'play-animation' : 'stop-animation'"
+        class="district-instruct-sign"
+      >
         <div class="district-text-container">
           <p>點擊地圖查看各區里民資訊</p>
         </div>
@@ -11,7 +18,11 @@
           <img src="@/assets/images/white-arrow.png" alt="" />
         </div>
       </div>
-      <div class="district-map-container">
+      <div
+        @mouseenter="isPlay = !isPlay"
+        @mouseleave="isPlay = !isPlay"
+        class="district-map-container"
+      >
         <iframe
           class="district-map-iframe"
           src="https://tainan.olc.tw"
@@ -25,30 +36,33 @@
 
 <style scoped lang="scss">
 .district-map-page {
+  // padding: 40% 0;
+  // 旁邊有margin手動置中，不使用flex，否則會限縮
   @media (min-width: 992px) {
     margin: 0 10%;
   }
+  // 固定要使用flex
   @media (min-width: 1440px) {
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  // 超過1920讓他自然長
   @media (min-width: 1930px) {
     display: block;
     margin: 0 30%;
   }
 }
 .map-page {
-  padding-top: 30px;
+  padding-top: 40%;
+  @media (min-width: 450px) {
+    padding-top: 30px;
+  }
 
   @media (min-width: 1440px) {
     flex-basis: 803px;
   }
-  // margin: auto 0;
-  // flex-basis: 80%;
-  // align-self: flex-start;
-  // flex-direction: column;
 
   @media (min-width: 1920px) {
     flex-basis: 1003px;
@@ -92,8 +106,17 @@
   align-items: center;
   justify-content: center;
   gap: 14px;
+}
+
+.play-animation {
   animation-name: bounce;
   animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.stop-animation {
+  animation-name: bounce;
+  animation-duration: 0s;
   animation-iteration-count: infinite;
 }
 

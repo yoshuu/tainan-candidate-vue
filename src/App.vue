@@ -1,12 +1,24 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, nextTick } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+
+const navbarDesktop = ref(null);
+const navbarMobile = ref(null);
+
+onMounted(() => {
+  const navbarRect = navbarMobile.value.getBoundingClientRect();
+  console.log(navbarRect.height);
+});
+
+onMounted(() => {
+  // navbarMobile.value.focus();
+});
 </script>
 
 <template>
   <header>
     <div class="container p-0">
-      <nav class="navbar-desktop navbar navbar-expand-lg">
+      <nav ref="navbarDesktop" class="navbar-desktop navbar navbar-expand-lg">
         <div class="container-fluid p-0">
           <RouterLink class="navbar-brand candidate-logo" to="/"
             ><img
@@ -59,7 +71,7 @@ import { RouterLink, RouterView } from "vue-router";
           </div>
         </div>
       </nav>
-      <nav class="navbar-mobile navbar">
+      <nav ref="navbarMobile" class="navbar-mobile navbar">
         <div class="brand-container">
           <RouterLink class="navbar-brand candidate-logo" to="/"
             ><img
@@ -140,7 +152,6 @@ header {
     margin: 0;
     padding: 0;
     display: inline-block;
-    height: 56px;
 
     img {
       object-fit: contain;
@@ -167,6 +178,10 @@ header {
     background-color: $header;
     padding: 10px 40px;
 
+    .navbar-brand {
+      height: 56px;
+    }
+
     .navbar-collapse {
       justify-content: end;
     }
@@ -187,6 +202,10 @@ header {
       display: flex;
       justify-content: space-between;
       padding: 7px 12px;
+
+      .navbar-brand {
+        height: 30px;
+      }
     }
 
     .navbar-nav {

@@ -1,9 +1,16 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const isPlay = ref(true);
+</script>
 
 <template>
   <main class="street-map-page">
     <div class="map-page">
-      <div class="street-instruct-sign">
+      <div
+        :class="isPlay ? 'play-animation' : 'stop-animation'"
+        class="street-instruct-sign"
+      >
         <div class="district-text-container">
           <p>點擊路線查看掃街紀錄</p>
         </div>
@@ -11,7 +18,11 @@
           <img src="@/assets/images/white-arrow.png" alt="" />
         </div>
       </div>
-      <div class="street-map-container">
+      <div
+        @mouseenter="isPlay = !isPlay"
+        @mouseleave="isPlay = !isPlay"
+        class="street-map-container"
+      >
         <iframe
           class="street-map-iframe"
           src="https://tainan.olc.tw/lines.html"
@@ -40,7 +51,10 @@
   }
 }
 .map-page {
-  padding-top: 30px;
+  padding-top: 40%;
+  @media (min-width: 450px) {
+    padding-top: 30px;
+  }
 
   @media (min-width: 1440px) {
     flex-basis: 803px;
@@ -91,8 +105,16 @@
   align-items: center;
   justify-content: center;
   gap: 14px;
+}
+.play-animation {
   animation-name: bounce;
   animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.stop-animation {
+  animation-name: bounce;
+  animation-duration: 0s;
   animation-iteration-count: infinite;
 }
 
