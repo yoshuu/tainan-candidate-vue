@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import data from "../assets/JSON/works.json";
+const { data: worksList } = data;
+</script>
 
 <template>
   <main class="past-works-page">
@@ -19,7 +22,39 @@
         </div>
         <div class="sticky-notes">
           <h2 class="past-works-topic">過去作品</h2>
-          <div class="past-works"></div>
+          <div
+            class="past-works"
+            v-masonry="containerId"
+            transition-duration="0.3s"
+            item-selector=".project"
+          >
+            <div
+              class="project"
+              v-masonry-tile
+              v-for="item in worksList"
+              :key="item.portfolio.link"
+            >
+              <img
+                class="project-img"
+                :src="`./src/assets/${item.portfolio.imgUrl}`"
+              />
+              <div class="project-content">
+                <a :href="item.link" class="theme">
+                  <h3>{{ item.portfolio.title }}</h3>
+                  <img src="@/assets/images/github-icon.png" />
+                </a>
+                <div class="bottom-line"></div>
+                <div class="news-title">相關報導</div>
+                <div class="news-box">
+                  <a class="news-item">ETtoday</a>
+                  <a class="news-item">遠見</a>
+                  <a class="news-item">健康2.0</a>
+                  <a class="news-item">聯合新聞網</a>
+                  <a class="news-item">電獺少女</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -29,6 +64,12 @@
 <style lang="scss" scoped>
 @import "../assets/scss/layout/past-record-page";
 @import "../assets/scss/components/sticky-notes";
+
+.past-record-container .toggle-box .toggle-past-works {
+  color: #fff;
+  background-color: #a7ced4;
+  border: 5px solid #e3eaea;
+}
 
 @media (min-width: 768px) {
   .past-works:after {
