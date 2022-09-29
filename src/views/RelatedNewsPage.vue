@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import data from "../assets/JSON/news.json";
+
+const { data: newsList } = data;
+</script>
 
 <template>
   <main>
@@ -20,7 +24,18 @@
         <div class="sticky-notes">
           <div class="related-news">
             <h2>相關新聞</h2>
-            <div class="related-news-container"></div>
+            <div class="related-news-container">
+              <a
+                target="_blank"
+                class="news-item"
+                v-for="item in newsList"
+                :key="item.link"
+                :href="item.link"
+                ><p>
+                  {{ item.title }}<span>-{{ item.date }}</span>
+                </p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -31,6 +46,12 @@
 <style scoped lang="scss">
 @import "../assets/scss/layout/past-record-page";
 @import "../assets/scss/components/sticky-notes";
+
+.past-record-container .toggle-box .toggle-related-news {
+  color: #fff;
+  background-color: #a7ced4;
+  border: 5px solid #e3eaea;
+}
 
 .related-news {
   padding: 14px 20px;

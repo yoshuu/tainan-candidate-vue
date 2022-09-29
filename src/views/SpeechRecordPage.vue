@@ -12,6 +12,23 @@ function checkLength(array, index) {
   if (array.length === 1 && index === 1) return "##";
   if (array.length === 2) return array[index].link;
 }
+
+// 佳憲重構1
+// function checkLength(array, index) {
+//   if (array.length === 0 || (array.length === 1 && index === 1)) return "##";
+//   else array.length === 2 || (array.length === 1 && index === 0);
+//   return array[index].link;
+// }
+
+// 佳憲重購2
+// function checkLength(array, index) {
+//   const apple = array.length;
+//   if (apple < 2 || apple === index) {
+//     return "##";
+//   } else {
+//     return array[index].link;
+//   }
+// }
 </script>
 
 <template>
@@ -117,6 +134,12 @@ function checkLength(array, index) {
 @import "../assets/scss/layout/past-record-page";
 @import "../assets/scss/components/sticky-notes";
 @import "../assets/scss/components/tags";
+
+.past-record-container .toggle-box .toggle-speech-record {
+  color: #fff;
+  background-color: #a7ced4;
+  border: 5px solid #e3eaea;
+}
 
 .speech-record {
   padding: 14px 20px;
