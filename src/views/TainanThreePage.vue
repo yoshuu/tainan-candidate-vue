@@ -450,13 +450,22 @@
 }
 
 .tainan-three {
-  // margin-top: 50px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
   transform: translateY(5%);
+
+  @media (min-width: 992px) {
+    margin-top: 0;
+    transform: translateY(16.8%);
+    overflow: initial;
+  }
+
+  @media (min-width: 1920px) {
+    transform: translateY(1.8%);
+  }
 
   // hover時的動畫
   &:hover .people-name {
@@ -480,16 +489,6 @@
       transform: translateY(0px);
       animation-timing-function: ease-in-out;
     }
-  }
-
-  @media (min-width: 992px) {
-    margin-top: 0;
-    transform: translateY(16.8%);
-    overflow: initial;
-  }
-
-  @media (min-width: 1920px) {
-    transform: translateY(1.8%);
   }
 
   .tainan-three-img {
