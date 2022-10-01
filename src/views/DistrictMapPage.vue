@@ -67,6 +67,7 @@ const isPlay = ref(true);
   // }
 }
 .map-page {
+  position: relative;
   // margin: 0 10%;
   // flex-basis: 803px;
 
@@ -119,12 +120,26 @@ const isPlay = ref(true);
 }
 
 .district-instruct-sign {
-  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 14px;
+
+  position: absolute;
+  top: -40%;
+  left: 25%;
+  @media (min-width: 400px) {
+    top: -40%;
+    left: 25%;
+    right: 25%;
+    bottom: 100%;
+  }
+
+  @media (min-width: 450px) {
+    position: unset;
+    padding-bottom: 15px;
+  }
 }
 
 .play-animation {

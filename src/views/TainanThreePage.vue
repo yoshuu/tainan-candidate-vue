@@ -5,8 +5,6 @@ import { useWindowSize } from "@vueuse/core";
 const { width, height } = useWindowSize();
 const isCentered = ref(null);
 
-console.log(width.value);
-
 watch(width, (newWidth, oldWidth) => {
   if (newWidth >= 576) {
     isCentered.value = true;
@@ -38,10 +36,6 @@ watch(width, (newWidth, oldWidth) => {
 //     return false;
 //   }
 // }
-
-// :class="{ 'modal-dialog-centered': checkWindowWidth() }"
-
-// window.addEventListener("resize", checkWindowWidth);
 </script>
 
 <template>

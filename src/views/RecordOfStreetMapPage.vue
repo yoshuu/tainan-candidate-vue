@@ -61,6 +61,7 @@ const isPlay = ref(true);
   }
 }
 .map-page {
+  position: relative;
   @media (min-width: 992px) {
     padding-top: 5%;
     flex-basis: 50%;
@@ -110,12 +111,26 @@ const isPlay = ref(true);
 }
 
 .street-instruct-sign {
-  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 14px;
+
+  position: absolute;
+  top: -40%;
+  left: 25%;
+  @media (min-width: 400px) {
+    top: -40%;
+    left: 25%;
+    right: 25%;
+    bottom: 100%;
+  }
+
+  @media (min-width: 450px) {
+    position: unset;
+    padding-bottom: 15px;
+  }
 }
 .play-animation {
   animation-name: bounce;
