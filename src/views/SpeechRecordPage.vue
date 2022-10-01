@@ -124,6 +124,7 @@ function checkLength(array, index) {
       </div>
     </div>
   </main>
+  <a href="#" class="top">Top &#8593;</a>
 </template>
 
 <style lang="scss" scoped>

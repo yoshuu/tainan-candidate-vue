@@ -40,6 +40,7 @@ const { data: newsList } = data;
         </div>
       </div>
     </div>
+    <a href="#" class="top">Top &#8593;</a>
   </main>
 </template>
 
