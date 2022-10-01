@@ -3,6 +3,7 @@ import FrontPage from "../views/FrontPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  // linkExactActiveClass: "active",
   routes: [
     {
       path: "/",

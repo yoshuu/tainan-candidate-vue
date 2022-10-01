@@ -143,11 +143,17 @@ header {
       color: white;
     }
 
+    &.router-link-exact-active {
+      background-color: #30363a;
+      color: white;
+    }
+
     @media (min-width: 992px) {
       padding: 15px 20px;
       font-size: 18px;
     }
   }
+
   .navbar-brand {
     margin: 0;
     padding: 0;
