@@ -1,13 +1,27 @@
 <script setup>
 import data from "../assets/JSON/data.json";
-const dataJson = data;
+const { data: dataJson } = data;
 
-function checkLength(array, index) {
-  if (array.length === 0) return "##";
-  if (array.length === 1 && index === 0) return array[0].link;
-  if (array.length === 1 && index === 1) return "##";
-  if (array.length === 2) return array[index].link;
-}
+// function checkLength(array, index) {
+//   if (array.length === 0) return "##";
+//   if (array.length === 1 && index === 0) return array[0].link;
+//   if (array.length === 1 && index === 1) return "##";
+//   if (array.length === 2) return array[index].link;
+// }
+
+// function checkLength(array, index) {
+//   if (array.length < 2) {
+//     if (array.length === 0) {
+//       return "##";
+//     } else if (array.length === 1 && index === 0) {
+//       return array[index].link;
+//     } else {
+//       return "##";
+//     }
+//   } else {
+//     return array[index].link;
+//   }
+// }
 
 // 佳憲重構1
 // function checkLength(array, index) {
@@ -17,29 +31,42 @@ function checkLength(array, index) {
 // }
 
 // 佳憲重購2
-// function checkLength(array, index) {
-//   const apple = array.length;
-//   if (apple < 2 || apple === index) {
-//     return "##";
-//   } else {
-//     return array[index].link;
-//   }
-// }
+
+const checkLength = (array, index) => {
+  if (array.length === 0 || (array.length === 1 && index === 1)) return "#";
+  else return array[index].link;
+};
+
+//判斷是否要加跳轉頁面
+const targetBlank = (array, index) => {
+  const result = checkLength(array, index);
+  if (result !== "#") {
+    return true;
+  } else {
+    return false;
+  }
+};
 </script>
 
 <template>
   <main>
     <div class="past-record-container">
       <div class="toggle-box">
-        <RouterLink class="toggle-speech-record" to="/SpeechRecordPage"
+        <RouterLink
+          class="toggle-button toggle-button-hover"
+          to="/SpeechRecordPage"
           >演講紀錄</RouterLink
         >
 
-        <RouterLink class="toggle-past-works" to="/PastWorksPage"
+        <RouterLink
+          class="toggle-button toggle-button-primary"
+          to="/PastWorksPage"
           >過去作品</RouterLink
         >
 
-        <RouterLink class="toggle-related-news" to="/RelatedNewsPage"
+        <RouterLink
+          class="toggle-button toggle-button-primary"
+          to="/RelatedNewsPage"
           >相關新聞</RouterLink
         >
       </div>
@@ -55,7 +82,7 @@ function checkLength(array, index) {
           <div class="speech-record-container">
             <div
               class="speech-record-desktop"
-              v-for="record in dataJson.data"
+              v-for="record in dataJson"
               :key="record.slides.link"
             >
               <div class="speech-record-content">
@@ -67,13 +94,17 @@ function checkLength(array, index) {
                     >投影片下載</a
                   >
                   <a
-                    target="_blank"
+                    :target="
+                      targetBlank(record.ytVideos, 0) ? '_blank' : '_self'
+                    "
                     :href="checkLength(record.ytVideos, 0)"
                     class="tags"
                     >影片連結</a
                   >
                   <a
-                    target="_blank"
+                    :target="
+                      targetBlank(record.ytVideos, 1) ? '_blank' : '_self'
+                    "
                     :href="checkLength(record.ytVideos, 1)"
                     class="tags"
                     >影片連結</a
@@ -83,7 +114,7 @@ function checkLength(array, index) {
             </div>
             <div
               class="speech-record-mobile"
-              v-for="record in dataJson.data"
+              v-for="record in dataJson"
               :key="record.slides.link"
             >
               <div class="speech-record-topicNcontent">
@@ -128,14 +159,9 @@ function checkLength(array, index) {
 
 <style lang="scss" scoped>
 @import "../assets/scss/layout/past-record-page";
+@import "../assets/scss/components/buttons";
 @import "../assets/scss/components/sticky-notes";
 @import "../assets/scss/components/tags";
-
-.past-record-container .toggle-box .toggle-speech-record {
-  color: #fff;
-  background-color: #a7ced4;
-  border: 5px solid #e3eaea;
-}
 
 .speech-record {
   padding: 14px 20px;
@@ -214,6 +240,11 @@ function checkLength(array, index) {
     h3 {
       font-size: 14px;
       font-weight: 700;
+      line-height: 20.27px;
+    }
+
+    p {
+      line-height: 20.27px;
     }
 
     .speech-record-topicNcontent {

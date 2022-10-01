@@ -9,3 +9,5 @@ app.use(router);
 app.use(VueMasonryPlugin);
 
 app.mount("#app");
+
+app.config.globalProperties.window = window;

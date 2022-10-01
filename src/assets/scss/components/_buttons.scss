@@ -50,3 +50,36 @@
     line-height: 23.17px;
   }
 }
+
+.toggle-button {
+  min-width: 98px;
+  min-height: 53px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  text-align: center;
+
+  @media (min-width: 992px) {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    width: 182px;
+    height: 80px;
+    line-height: 50px;
+  }
+
+  &-primary {
+    color: #30363a;
+    background-color: #e3eaea;
+    border: 5px solid #a7ced4;
+  }
+
+  &-hover,
+  &:hover {
+    color: #fff;
+    background-color: #a7ced4;
+    border: 5px solid #e3eaea;
+  }
+}

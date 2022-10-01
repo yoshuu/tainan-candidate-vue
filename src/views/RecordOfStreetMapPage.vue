@@ -36,7 +36,7 @@ const isPlay = ref(true);
 <style scoped lang="scss">
 // 1440, 1920 那些時候固定flex-basis，之後就變display:block
 .street-map-page {
-  height: calc(100vh - 77px);
+  height: calc(100vh - 75px - 75px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,20 +44,21 @@ const isPlay = ref(true);
   @media (min-width: 992px) {
     flex-direction: row;
     justify-content: center;
+    height: calc(100vh - 77px);
+    // @media (min-width: 992px) {
+    //   margin: 0 10%;
+    // }
+    // @media (min-width: 1440px) {
+    //   margin: 0;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
+    // @media (min-width: 1930px) {
+    //   display: block;
+    //   margin: 0 30%;
+    // }
   }
-  // @media (min-width: 992px) {
-  //   margin: 0 10%;
-  // }
-  // @media (min-width: 1440px) {
-  //   margin: 0;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
-  // @media (min-width: 1930px) {
-  //   display: block;
-  //   margin: 0 30%;
-  // }
 }
 .map-page {
   @media (min-width: 992px) {

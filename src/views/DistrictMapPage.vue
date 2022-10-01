@@ -36,7 +36,7 @@ const isPlay = ref(true);
 
 <style scoped lang="scss">
 .district-map-page {
-  height: calc(100vh - 77px);
+  height: calc(100vh - 75px - 75px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,6 +44,7 @@ const isPlay = ref(true);
   @media (min-width: 992px) {
     flex-direction: row;
     justify-content: center;
+    height: calc(100vh - 77px);
   }
 
   // padding: 40% 0;

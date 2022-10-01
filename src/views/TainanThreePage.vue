@@ -1,4 +1,16 @@
-<script setup></script>
+<script setup>
+import { computed, ref } from "vue";
+
+const windowWidth = ref(window.innerWidth);
+
+const checkWindowWidth = computed(() => ({
+  "modal-dialog-centered": windowWidth.value >= 576 ? true : false,
+}));
+
+// function checkWindowWidth() {}
+
+window.addEventListener("resize", checkWindowWidth);
+</script>
 
 <template>
   <main class="tainan-three-page">
@@ -10,13 +22,6 @@
             data-bs-toggle="modal"
             data-bs-target="#street-map-modal"
           ></div>
-          <!-- <img
-            class="map-button"
-            data-bs-toggle="modal"
-            data-bs-target="#street-map-modal"
-            src="@/assets/images/mapButton.png"
-            alt=""
-          /> -->
           <img
             class="tainan-three-img"
             src="@/assets/images/tainan-cadidate-without-name.png"
@@ -52,7 +57,10 @@
         </div>
       </div>
       <div class="modal fade kiang-dialog" id="kiang-modal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
+        <div
+          class="modal-dialog modal-fullscreen-sm-down modal-lg"
+          :class="checkWindowWidth"
+        >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
               <button
@@ -157,7 +165,10 @@
         </div>
       </div>
       <div class="modal fade kuo-dialog" id="kuo-modal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
+        <div
+          class="modal-dialog modal-fullscreen-sm-down modal-lg"
+          :class="checkWindowWidth"
+        >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
               <button
@@ -316,7 +327,10 @@
         </div>
       </div>
       <div class="modal fade ping-dialog" id="ping-modal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
+        <div
+          class="modal-dialog modal-fullscreen-sm-down modal-lg"
+          :class="checkWindowWidth"
+        >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
               <button
@@ -442,7 +456,7 @@
 
 .tainan-container {
   position: relative;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 75px - 75px);
 
   @media (min-width: 1920px) {
     height: calc(100vh - 77px);
@@ -459,7 +473,7 @@
 
   @media (min-width: 992px) {
     margin-top: 0;
-    transform: translateY(16.8%);
+    transform: translateY(12%);
     overflow: initial;
   }
 

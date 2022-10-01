@@ -8,15 +8,21 @@ const { data: worksList } = data;
     <div class="container p-0">
       <div class="past-record-container">
         <div class="toggle-box">
-          <RouterLink class="toggle-speech-record" to="/SpeechRecordPage"
+          <RouterLink
+            class="toggle-button toggle-button-primary"
+            to="/SpeechRecordPage"
             >演講紀錄</RouterLink
           >
 
-          <RouterLink class="toggle-past-works" to="/PastWorksPage"
+          <RouterLink
+            class="toggle-button toggle-button-hover"
+            to="/PastWorksPage"
             >過去作品</RouterLink
           >
 
-          <RouterLink class="toggle-related-news" to="/RelatedNewsPage"
+          <RouterLink
+            class="toggle-button toggle-button-primary"
+            to="/RelatedNewsPage"
             >相關新聞</RouterLink
           >
         </div>
@@ -63,13 +69,14 @@ const { data: worksList } = data;
 
 <style lang="scss" scoped>
 @import "../assets/scss/layout/past-record-page";
+@import "../assets/scss/components/buttons";
 @import "../assets/scss/components/sticky-notes";
 
-.past-record-container .toggle-box .toggle-past-works {
-  color: #fff;
-  background-color: #a7ced4;
-  border: 5px solid #e3eaea;
-}
+// .past-record-container .toggle-box .toggle-button {
+//   color: #fff;
+//   background-color: #a7ced4;
+//   border: 5px solid #e3eaea;
+// }
 
 @media (min-width: 768px) {
   .past-works:after {

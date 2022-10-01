@@ -1,19 +1,4 @@
-<script setup>
-import { ref, computed, onMounted, nextTick } from "vue";
-import { RouterLink, RouterView } from "vue-router";
-
-const navbarDesktop = ref(null);
-const navbarMobile = ref(null);
-
-onMounted(() => {
-  const navbarRect = navbarMobile.value.getBoundingClientRect();
-  console.log(navbarRect.height);
-});
-
-onMounted(() => {
-  // navbarMobile.value.focus();
-});
-</script>
+<script setup></script>
 
 <template>
   <header>
@@ -138,7 +123,8 @@ header {
     color: black;
     padding: 5px 15px;
 
-    &:hover {
+    &:hover,
+    &-hover {
       background-color: #30363a;
       color: white;
     }

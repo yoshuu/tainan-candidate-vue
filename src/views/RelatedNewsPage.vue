@@ -9,15 +9,21 @@ const { data: newsList } = data;
     <div class="container p-0">
       <div class="past-record-container">
         <div class="toggle-box">
-          <RouterLink class="toggle-speech-record" to="/SpeechRecordPage"
+          <RouterLink
+            class="toggle-button toggle-button-primary"
+            to="/SpeechRecordPage"
             >演講紀錄</RouterLink
           >
 
-          <RouterLink class="toggle-past-works" to="/PastWorksPage"
+          <RouterLink
+            class="toggle-button toggle-button-primary"
+            to="/PastWorksPage"
             >過去作品</RouterLink
           >
 
-          <RouterLink class="toggle-related-news" to="/RelatedNewsPage"
+          <RouterLink
+            class="toggle-button toggle-button-hover"
+            to="/RelatedNewsPage"
             >相關新聞</RouterLink
           >
         </div>
@@ -45,13 +51,14 @@ const { data: newsList } = data;
 
 <style scoped lang="scss">
 @import "../assets/scss/layout/past-record-page";
+@import "../assets/scss/components/buttons";
 @import "../assets/scss/components/sticky-notes";
 
-.past-record-container .toggle-box .toggle-related-news {
-  color: #fff;
-  background-color: #a7ced4;
-  border: 5px solid #e3eaea;
-}
+// .past-record-container .toggle-box .toggle-button {
+//   color: #fff;
+//   background-color: #a7ced4;
+//   border: 5px solid #e3eaea;
+// }
 
 .related-news {
   padding: 14px 20px;

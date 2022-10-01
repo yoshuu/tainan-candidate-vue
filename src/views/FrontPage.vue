@@ -117,7 +117,7 @@ const navbarHeight = ref("");
 @import "../assets/scss/components/_declaration";
 .front-page-container {
   display: flex;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 75px - 75px);
 
   @media (min-width: 992px) {
     height: calc(100vh - 77px);
