@@ -21,12 +21,12 @@ const router = createRouter({
 
       component: () => import("@/views/RecordOfStreetMapPage.vue"),
     },
-    {
-      path: "/StickyNotesPage",
-      name: "StickyNotesPage",
+    // {
+    //   path: "/StickyNotesPage",
+    //   name: "StickyNotesPage",
 
-      component: () => import("@/views/StickyNotesPage.vue"),
-    },
+    //   component: () => import("@/views/StickyNotesPage.vue"),
+    // },
     {
       path: "/TainanThreePage",
       name: "TainanThreePage",

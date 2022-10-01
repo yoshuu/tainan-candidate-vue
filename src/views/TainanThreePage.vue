@@ -1,15 +1,47 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
+import { useWindowSize } from "@vueuse/core";
 
-const windowWidth = ref(window.innerWidth);
+const { width, height } = useWindowSize();
+const isCentered = ref(null);
 
-const checkWindowWidth = computed(() => ({
-  "modal-dialog-centered": windowWidth.value >= 576 ? true : false,
-}));
+console.log(width.value);
 
-// function checkWindowWidth() {}
+watch(width, (newWidth, oldWidth) => {
+  if (newWidth >= 576) {
+    isCentered.value = true;
+  } else {
+    isCentered.value = false;
+  }
+});
 
-window.addEventListener("resize", checkWindowWidth);
+// const checkWindowWidth = computed(() => {
+//   const windowWidth = ref(window.innerWidth);
+
+//   if (windowWidth.value >= 576) {
+//     console.log("here", windowWidth.value);
+//     return true;
+//   } else {
+//     console.log("no", windowWidth.value);
+//     return false;
+//   }
+// });
+
+// function checkWindowWidth() {
+//   // 放在外面沒有響應式
+//   const windowWidth = ref(window.innerWidth);
+//   if (windowWidth.value >= 576) {
+//     console.log("here", windowWidth.value);
+//     return true;
+//   } else {
+//     console.log("no", windowWidth.value);
+//     return false;
+//   }
+// }
+
+// :class="{ 'modal-dialog-centered': checkWindowWidth() }"
+
+// window.addEventListener("resize", checkWindowWidth);
 </script>
 
 <template>
@@ -59,7 +91,7 @@ window.addEventListener("resize", checkWindowWidth);
       <div class="modal fade kiang-dialog" id="kiang-modal" tabindex="-1">
         <div
           class="modal-dialog modal-fullscreen-sm-down modal-lg"
-          :class="checkWindowWidth"
+          :class="{ 'modal-dialog-centered': isCentered }"
         >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
@@ -167,7 +199,7 @@ window.addEventListener("resize", checkWindowWidth);
       <div class="modal fade kuo-dialog" id="kuo-modal" tabindex="-1">
         <div
           class="modal-dialog modal-fullscreen-sm-down modal-lg"
-          :class="checkWindowWidth"
+          :class="{ 'modal-dialog-centered': isCentered }"
         >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
@@ -329,7 +361,7 @@ window.addEventListener("resize", checkWindowWidth);
       <div class="modal fade ping-dialog" id="ping-modal" tabindex="-1">
         <div
           class="modal-dialog modal-fullscreen-sm-down modal-lg"
-          :class="checkWindowWidth"
+          :class="{ 'modal-dialog-centered': isCentered }"
         >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
