@@ -39,7 +39,7 @@ const { data: worksList } = data;
                 :src="`./src/assets/${item.portfolio.imgUrl}`"
               />
               <div class="project-content">
-                <a :href="item.link" class="theme">
+                <a :href="item.portfolio.link" class="theme">
                   <h3>{{ item.portfolio.title }}</h3>
                   <img src="@/assets/images/github-icon.png" />
                 </a>
@@ -59,6 +59,7 @@ const { data: worksList } = data;
       </div>
     </div>
   </main>
+  <a href="#" class="top">Top &#8593;</a>
 </template>
 
 <style lang="scss" scoped>
