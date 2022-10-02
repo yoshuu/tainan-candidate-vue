@@ -196,6 +196,7 @@ function checkLength(array, index) {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          gap: 10px;
         }
       }
     }
