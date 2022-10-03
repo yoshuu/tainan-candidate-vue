@@ -91,7 +91,10 @@
               src="@/assets/images/navbar-candidate-logo.png"
               alt="navbar-candidate-logo"
           /></RouterLink>
-          <a class="navbar-brand party-logo" href="https://www.tpp.org.tw/"
+          <a
+            class="navbar-brand party-logo"
+            href="https://www.tpp.org.tw/"
+            target="_blank"
             ><img
               src="@/assets/images/navbar-party-logo.png"
               alt="navbar-candidate-logo"
