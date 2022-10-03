@@ -12,30 +12,6 @@ watch(width, (newWidth, oldWidth) => {
     isCentered.value = false;
   }
 });
-
-// const checkWindowWidth = computed(() => {
-//   const windowWidth = ref(window.innerWidth);
-
-//   if (windowWidth.value >= 576) {
-//     console.log("here", windowWidth.value);
-//     return true;
-//   } else {
-//     console.log("no", windowWidth.value);
-//     return false;
-//   }
-// });
-
-// function checkWindowWidth() {
-//   // 放在外面沒有響應式
-//   const windowWidth = ref(window.innerWidth);
-//   if (windowWidth.value >= 576) {
-//     console.log("here", windowWidth.value);
-//     return true;
-//   } else {
-//     console.log("no", windowWidth.value);
-//     return false;
-//   }
-// }
 </script>
 
 <template>
@@ -504,7 +480,7 @@ watch(width, (newWidth, oldWidth) => {
   }
 
   @media (min-width: 1920px) {
-    transform: translateY(1.8%);
+    transform: translateY(4%);
   }
 
   // hover時的動畫
