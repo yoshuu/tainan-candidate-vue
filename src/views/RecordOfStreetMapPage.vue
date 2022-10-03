@@ -116,6 +116,8 @@ const isPlay = ref(true);
   align-items: center;
   justify-content: center;
   gap: 14px;
+  // 為了跟里民的長度一樣
+  width: 192px;
 
   position: absolute;
   top: -40%;
@@ -128,6 +130,7 @@ const isPlay = ref(true);
   }
 
   @media (min-width: 450px) {
+    width: initial;
     position: unset;
     padding-bottom: 15px;
   }
