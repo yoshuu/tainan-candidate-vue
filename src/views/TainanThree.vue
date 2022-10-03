@@ -1,4 +1,18 @@
-<script setup></script>
+<script setup>
+import { computed, ref, watch } from "vue";
+import { useWindowSize } from "@vueuse/core";
+
+const { width, height } = useWindowSize();
+const isCentered = ref(null);
+
+watch(width, (newWidth, oldWidth) => {
+  if (newWidth >= 576) {
+    isCentered.value = true;
+  } else {
+    isCentered.value = false;
+  }
+});
+</script>
 
 <template>
   <main class="tainan-three-page">
@@ -10,13 +24,6 @@
             data-bs-toggle="modal"
             data-bs-target="#street-map-modal"
           ></div>
-          <!-- <img
-            class="map-button"
-            data-bs-toggle="modal"
-            data-bs-target="#street-map-modal"
-            src="@/assets/images/mapButton.png"
-            alt=""
-          /> -->
           <img
             class="tainan-three-img"
             src="@/assets/images/tainan-cadidate-without-name.png"
@@ -52,7 +59,10 @@
         </div>
       </div>
       <div class="modal fade kiang-dialog" id="kiang-modal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
+        <div
+          class="modal-dialog modal-fullscreen-sm-down modal-lg"
+          :class="{ 'modal-dialog-centered': isCentered }"
+        >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
               <button
@@ -67,7 +77,7 @@
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 4.png" />
+                  <img src="@/assets/images/kiang-popuping.png" />
                 </div>
                 <h3>用科技找回台南 400 年榮景，江明宗參選北區中西區議員宣言</h3>
                 <p>
@@ -116,7 +126,7 @@
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 4.png" />
+                  <img src="@/assets/images/kiang-popuping.png" />
                 </div>
                 <h2>用科技找回台南 400 年榮景，江明宗參選北區中西區議員宣言</h2>
                 <p>
@@ -157,7 +167,10 @@
         </div>
       </div>
       <div class="modal fade kuo-dialog" id="kuo-modal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
+        <div
+          class="modal-dialog modal-fullscreen-sm-down modal-lg"
+          :class="{ 'modal-dialog-centered': isCentered }"
+        >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
               <button
@@ -172,7 +185,7 @@
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 5.png" />
+                  <img src="@/assets/images/kuo-popuping.png" />
                 </div>
                 <h3>請益各領域專家 融合自身所看所聽 研擬最適合在地的政見</h3>
                 <p>
@@ -248,7 +261,7 @@
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img class="people" src="@/assets/images/image 5.png" />
+                  <img class="people" src="@/assets/images/kuo-popuping.png" />
                 </div>
                 <h2>請益各領域專家 融合自身所看所聽 研擬最適合在地的政見</h2>
                 <p>
@@ -316,7 +329,10 @@
         </div>
       </div>
       <div class="modal fade ping-dialog" id="ping-modal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen-sm-down modal-lg">
+        <div
+          class="modal-dialog modal-fullscreen-sm-down modal-lg"
+          :class="{ 'modal-dialog-centered': isCentered }"
+        >
           <div class="modal-content modal-desktop">
             <div class="modal-header">
               <button
@@ -331,7 +347,7 @@
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 6.png" />
+                  <img src="@/assets/images/ping-popuping.png" />
                 </div>
                 <h3>
                   超越藍綠新世代．永康向前衝
@@ -370,7 +386,7 @@
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 6.png" />
+                  <img src="@/assets/images/ping-popuping.png" />
                 </div>
                 <h2>
                   超越藍綠新世代．永康向前衝
@@ -442,7 +458,7 @@
 
 .tainan-container {
   position: relative;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 75px - 75px);
 
   @media (min-width: 1920px) {
     height: calc(100vh - 77px);
@@ -459,12 +475,12 @@
 
   @media (min-width: 992px) {
     margin-top: 0;
-    transform: translateY(16.8%);
+    transform: translateY(12%);
     overflow: initial;
   }
 
   @media (min-width: 1920px) {
-    transform: translateY(1.8%);
+    transform: translateY(4%);
   }
 
   // hover時的動畫

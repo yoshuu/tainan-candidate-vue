@@ -36,7 +36,7 @@ const isPlay = ref(true);
 <style scoped lang="scss">
 // 1440, 1920 那些時候固定flex-basis，之後就變display:block
 .street-map-page {
-  height: calc(100vh - 77px);
+  height: calc(100vh - 75px - 75px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,22 +44,24 @@ const isPlay = ref(true);
   @media (min-width: 992px) {
     flex-direction: row;
     justify-content: center;
+    height: calc(100vh - 77px);
+    // @media (min-width: 992px) {
+    //   margin: 0 10%;
+    // }
+    // @media (min-width: 1440px) {
+    //   margin: 0;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
+    // @media (min-width: 1930px) {
+    //   display: block;
+    //   margin: 0 30%;
+    // }
   }
-  // @media (min-width: 992px) {
-  //   margin: 0 10%;
-  // }
-  // @media (min-width: 1440px) {
-  //   margin: 0;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
-  // @media (min-width: 1930px) {
-  //   display: block;
-  //   margin: 0 30%;
-  // }
 }
 .map-page {
+  position: relative;
   @media (min-width: 992px) {
     padding-top: 5%;
     flex-basis: 50%;
@@ -109,12 +111,29 @@ const isPlay = ref(true);
 }
 
 .street-instruct-sign {
-  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 14px;
+  // 為了跟里民的長度一樣
+  width: 192px;
+
+  position: absolute;
+  top: -40%;
+  left: 25%;
+  @media (min-width: 400px) {
+    top: -40%;
+    left: 25%;
+    right: 25%;
+    bottom: 100%;
+  }
+
+  @media (min-width: 450px) {
+    width: initial;
+    position: unset;
+    padding-bottom: 15px;
+  }
 }
 .play-animation {
   animation-name: bounce;
