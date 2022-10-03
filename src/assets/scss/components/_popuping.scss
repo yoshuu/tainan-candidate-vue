@@ -1,5 +1,14 @@
 @use "../utility";
 
+%button-style-unset {
+  border: 1px solid transparent;
+  background-color: transparent;
+
+  &:focus-visible {
+    outline: 1px solid transparent;
+  }
+}
+
 // bootstrap
 .candidate,
 .kiang-dialog,
@@ -27,12 +36,7 @@
             color: white;
           }
           button {
-            border: 1px solid transparent;
-            background-color: transparent;
-
-            &:focus-visible {
-              outline: 1px solid transparent;
-            }
+            @extend %button-style-unset;
           }
         }
 
@@ -76,13 +80,9 @@
 
       .modal-header {
         padding: 5px 10px;
-        button {
-          border: 1px solid transparent;
-          background-color: transparent;
 
-          &:focus-visible {
-            outline: 1px solid transparent;
-          }
+        button {
+          @extend %button-style-unset;
         }
       }
 
@@ -127,12 +127,7 @@
   .modal-body,
   .modal-header {
     button {
-      border: 1px solid transparent;
-      background-color: transparent;
-
-      &:focus-visible {
-        outline: 1px solid transparent;
-      }
+      @extend %button-style-unset;
     }
   }
 
