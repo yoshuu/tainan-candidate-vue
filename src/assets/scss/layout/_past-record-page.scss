@@ -18,12 +18,11 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 8px;
 
   @media (min-width: 768px) {
     flex-direction: column;
     align-self: flex-start;
-    width: 233px;
     gap: 30px;
+    width: initial;
   }
 }

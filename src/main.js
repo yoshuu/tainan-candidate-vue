@@ -10,4 +10,4 @@ app.use(VueMasonryPlugin);
 
 app.mount("#app");
 
-app.config.globalProperties.window = window;
+// app.config.globalProperties.window = window;
