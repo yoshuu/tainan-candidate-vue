@@ -27,7 +27,7 @@ const { data: worksList } = data;
           :src="`/src/assets/${item.portfolio.imgUrl}`"
         />
         <div class="project-content">
-          <a :href="item.portfolio.link" class="theme">
+          <a :href="item.portfolio.link" class="theme" target="_blank">
             <h3>{{ item.portfolio.title }}</h3>
             <img src="@/assets/images/github-icon.png" />
           </a>

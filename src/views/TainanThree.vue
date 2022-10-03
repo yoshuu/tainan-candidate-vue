@@ -77,7 +77,7 @@ watch(width, (newWidth, oldWidth) => {
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 4.png" />
+                  <img src="@/assets/images/kiang-popuping.png" />
                 </div>
                 <h3>用科技找回台南 400 年榮景，江明宗參選北區中西區議員宣言</h3>
                 <p>
@@ -126,7 +126,7 @@ watch(width, (newWidth, oldWidth) => {
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 4.png" />
+                  <img src="@/assets/images/kiang-popuping.png" />
                 </div>
                 <h2>用科技找回台南 400 年榮景，江明宗參選北區中西區議員宣言</h2>
                 <p>
@@ -185,7 +185,7 @@ watch(width, (newWidth, oldWidth) => {
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 5.png" />
+                  <img src="@/assets/images/kuo-popuping.png" />
                 </div>
                 <h3>請益各領域專家 融合自身所看所聽 研擬最適合在地的政見</h3>
                 <p>
@@ -261,7 +261,7 @@ watch(width, (newWidth, oldWidth) => {
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img class="people" src="@/assets/images/image 5.png" />
+                  <img class="people" src="@/assets/images/kuo-popuping.png" />
                 </div>
                 <h2>請益各領域專家 融合自身所看所聽 研擬最適合在地的政見</h2>
                 <p>
@@ -347,7 +347,7 @@ watch(width, (newWidth, oldWidth) => {
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 6.png" />
+                  <img src="@/assets/images/ping-popuping.png" />
                 </div>
                 <h3>
                   超越藍綠新世代．永康向前衝
@@ -386,7 +386,7 @@ watch(width, (newWidth, oldWidth) => {
             <div class="modal-body">
               <div class="content">
                 <div class="people-img-container">
-                  <img src="@/assets/images/image 6.png" />
+                  <img src="@/assets/images/ping-popuping.png" />
                 </div>
                 <h2>
                   超越藍綠新世代．永康向前衝
