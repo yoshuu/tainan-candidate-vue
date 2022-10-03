@@ -41,7 +41,7 @@ const isPlay = ref(true);
   flex-direction: column;
   justify-content: center;
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 77px);
@@ -62,7 +62,7 @@ const isPlay = ref(true);
 }
 .map-page {
   position: relative;
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     padding-top: 5%;
     flex-basis: 50%;
   }
@@ -105,7 +105,7 @@ const isPlay = ref(true);
   font-weight: 700;
   color: white;
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     font-size: 20px;
   }
 }

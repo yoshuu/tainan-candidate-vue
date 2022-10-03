@@ -2,7 +2,7 @@
 import { computed, ref, watch } from "vue";
 import { useWindowSize } from "@vueuse/core";
 
-const { width, height } = useWindowSize();
+const { width } = useWindowSize();
 const isCentered = ref(null);
 
 watch(width, (newWidth, oldWidth) => {
