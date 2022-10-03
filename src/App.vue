@@ -13,26 +13,54 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mb-2 mb-lg-0 me-2 mt-2 mt-lg-0">
               <li class="nav-item">
-                <RouterLink class="nav-link" to="/">誰是江明宗</RouterLink>
+                <RouterLink
+                  class="nav-link"
+                  :to="{
+                    name: 'Home',
+                  }"
+                  >誰是江明宗</RouterLink
+                >
               </li>
               <li class="nav-item">
-                <RouterLink class="nav-link" to="/DistrictMapPage"
+                <RouterLink
+                  class="nav-link"
+                  :to="{
+                    name: 'DistrictMap',
+                  }"
                   >選區里民資料</RouterLink
                 >
               </li>
 
               <li class="nav-item">
-                <RouterLink class="nav-link" to="/RecordOfStreetMapPage"
+                <RouterLink
+                  class="nav-link"
+                  :to="{
+                    name: 'RecordOfStreetMap',
+                  }"
                   >掃街紀錄</RouterLink
                 >
               </li>
               <li class="nav-item">
-                <RouterLink class="nav-link" to="/SpeechRecordPage"
+                <RouterLink
+                  class="nav-link"
+                  :to="{
+                    name: 'SpeechRecord',
+                  }"
+                  :class="{
+                    'router-link-exact-active':
+                      $route.name === 'SpeechRecord' ||
+                      $route.name === 'PastWorks' ||
+                      $route.name === 'RelatedNews',
+                  }"
                   >過往紀錄</RouterLink
                 >
               </li>
               <li class="nav-item">
-                <RouterLink class="nav-link" to="/TainanThreePage"
+                <RouterLink
+                  class="nav-link"
+                  :to="{
+                    name: 'TainanThree',
+                  }"
                   >台南三江街講</RouterLink
                 >
               </li>
@@ -71,25 +99,53 @@
         </div>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/">誰是江明宗</RouterLink>
+            <RouterLink
+              class="nav-link"
+              :to="{
+                name: 'Home',
+              }"
+              >誰是江明宗</RouterLink
+            >
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/DistrictMapPage"
+            <RouterLink
+              class="nav-link"
+              :to="{
+                name: 'DistrictMap',
+              }"
               >選區里民資料</RouterLink
             >
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/RecordOfStreetMapPage"
+            <RouterLink
+              class="nav-link"
+              :to="{
+                name: 'RecordOfStreetMap',
+              }"
               >掃街紀錄</RouterLink
             >
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/SpeechRecordPage"
+            <RouterLink
+              class="nav-link"
+              :to="{
+                name: 'SpeechRecord',
+              }"
+              :class="{
+                'router-link-exact-active':
+                  $route.name === 'SpeechRecord' ||
+                  $route.name === 'PastWorks' ||
+                  $route.name === 'RelatedNews',
+              }"
               >過往紀錄</RouterLink
             >
           </li>
           <li class="nav-item">
-            <RouterLink class="nav-link" to="/TainanThreePage"
+            <RouterLink
+              class="nav-link"
+              :to="{
+                name: 'TainanThree',
+              }"
               >台南三江街講</RouterLink
             >
           </li>
@@ -129,11 +185,17 @@ header {
       color: white;
     }
 
+    &.router-link-exact-active {
+      background-color: #30363a;
+      color: white;
+    }
+
     @media (min-width: 992px) {
       padding: 15px 20px;
       font-size: 18px;
     }
   }
+
   .navbar-brand {
     margin: 0;
     padding: 0;
