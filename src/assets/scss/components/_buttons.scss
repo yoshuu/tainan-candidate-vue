@@ -39,7 +39,6 @@
   color: #fff;
   line-height: 41px;
   border: none;
-
   img {
     padding-left: 6px;
   }
@@ -48,6 +47,16 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 23.17px;
+  }
+
+  &:active {
+    transform: scale(0.5);
+    transition: 0.3s;
+    color: white;
+  }
+
+  &:hover {
+    color: white;
   }
 }
 

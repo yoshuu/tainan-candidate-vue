@@ -41,35 +41,16 @@ const isPlay = ref(true);
   flex-direction: column;
   justify-content: center;
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 77px);
   }
-
-  // padding: 40% 0;
-  // 旁邊有margin手動置中，不使用flex，否則會限縮
-
-  // @media (min-width: 992px) {
-  //   margin: 0 10%;
-  // }
-  // // 固定要使用flex
-  // @media (min-width: 1440px) {
-  //   margin: 0;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
-  // // 超過1920讓他自然長
-  // @media (min-width: 1930px) {
-  //   display: block;
-  //   margin: 0 30%;
-  // }
 }
 .map-page {
   position: relative;
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     padding-top: 5%;
     flex-basis: 50%;
   }
@@ -97,7 +78,7 @@ const isPlay = ref(true);
   font-weight: 700;
   color: white;
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     font-size: 20px;
   }
 }
