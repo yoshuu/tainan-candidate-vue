@@ -36,7 +36,7 @@ const isPlay = ref(true);
 
 <style scoped lang="scss">
 .district-map-page {
-  height: calc(100vh - 77px);
+  height: calc(100vh - 75px - 75px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,6 +44,7 @@ const isPlay = ref(true);
   @media (min-width: 992px) {
     flex-direction: row;
     justify-content: center;
+    height: calc(100vh - 77px);
   }
 
   // padding: 40% 0;
@@ -66,28 +67,12 @@ const isPlay = ref(true);
   // }
 }
 .map-page {
-  // margin: 0 10%;
-  // flex-basis: 803px;
+  position: relative;
 
   @media (min-width: 992px) {
     padding-top: 5%;
     flex-basis: 50%;
   }
-
-  // @media (min-width: 450px) {
-  //   padding-top: 30px
-  // }
-
-  // @media (min-width: 1440px) {
-  //   flex-basis: 803px;
-  // }
-
-  // @media (min-width: 1920px) {
-  //   flex-basis: 1003px;
-  // }
-  // @media (min-width: 1930px) {
-  //   flex-basis: unset;
-  // }
 
   .district-map-container {
     // height: 0;
@@ -118,12 +103,26 @@ const isPlay = ref(true);
 }
 
 .district-instruct-sign {
-  padding-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 14px;
+
+  position: absolute;
+  top: -40%;
+  left: 25%;
+  @media (min-width: 400px) {
+    top: -40%;
+    left: 25%;
+    right: 25%;
+    bottom: 100%;
+  }
+
+  @media (min-width: 450px) {
+    position: unset;
+    padding-bottom: 15px;
+  }
 }
 
 .play-animation {

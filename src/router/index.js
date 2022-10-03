@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import FrontPage from "../views/FrontPage.vue";
+import Home from "@/views/Home.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,50 +7,49 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "FrontPage",
-      component: FrontPage,
+      name: "Home",
+      component: Home,
     },
     {
-      path: "/DistrictMapPage",
-      name: "DistrictMapPage",
+      path: "/DistrictMap",
+      name: "DistrictMap",
 
-      component: () => import("@/views/DistrictMapPage.vue"),
+      component: () => import("@/views/DistrictMap.vue"),
     },
     {
-      path: "/RecordOfStreetMapPage",
-      name: "RecordOfStreetMapPage",
+      path: "/RecordOfStreetMap",
+      name: "RecordOfStreetMap",
 
-      component: () => import("@/views/RecordOfStreetMapPage.vue"),
+      component: () => import("@/views/RecordOfStreetMap.vue"),
     },
     {
-      path: "/StickyNotesPage",
-      name: "StickyNotesPage",
+      path: "/TainanThree",
+      name: "TainanThree",
 
-      component: () => import("@/views/StickyNotesPage.vue"),
+      component: () => import("@/views/TainanThree.vue"),
     },
     {
-      path: "/TainanThreePage",
-      name: "TainanThreePage",
+      path: "/PastRecord",
+      name: "PastRecord",
 
-      component: () => import("@/views/TainanThreePage.vue"),
-    },
-    {
-      path: "/SpeechRecordPage",
-      name: "SpeechRecordPage",
-
-      component: () => import("@/views/SpeechRecordPage.vue"),
-    },
-    {
-      path: "/RelatedNewsPage",
-      name: "RelatedNewsPage",
-
-      component: () => import("@/views/RelatedNewsPage.vue"),
-    },
-    {
-      path: "/PastWorksPage",
-      name: "PastWorksPage",
-
-      component: () => import("@/views/PastWorksPage.vue"),
+      component: () => import("@/views/PastRecord/PastRecord.vue"),
+      children: [
+        {
+          path: "SpeechRecord",
+          name: "SpeechRecord",
+          component: () => import("@/views/PastRecord/SpeechRecord.vue"),
+        },
+        {
+          path: "PastWorks",
+          name: "PastWorks",
+          component: () => import("@/views/PastRecord/PastWorks.vue"),
+        },
+        {
+          path: "RelatedNews",
+          name: "RelatedNews",
+          component: () => import("@/views/PastRecord/RelatedNews.vue"),
+        },
+      ],
     },
   ],
 });

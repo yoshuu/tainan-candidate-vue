@@ -1,0 +1,52 @@
+<script setup>
+import { RouterLink, RouterView } from "vue-router";
+</script>
+
+<template>
+  <main class="past-works-page">
+    <div class="past-record-container">
+      <div class="toggle-box">
+        <RouterLink
+          class="toggle-button"
+          :to="{
+            name: 'SpeechRecord',
+          }"
+          >演講紀錄</RouterLink
+        >
+
+        <RouterLink
+          class="toggle-button"
+          :to="{
+            name: 'PastWorks',
+          }"
+          >過去作品</RouterLink
+        >
+
+        <RouterLink
+          class="toggle-button"
+          :to="{
+            name: 'RelatedNews',
+          }"
+          >相關新聞</RouterLink
+        >
+      </div>
+      <RouterView />
+    </div>
+  </main>
+  <a href="#" class="top">Top &#8593;</a>
+</template>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/layout/past-record-page";
+@import "@/assets/scss/components/sticky-notes";
+@import "@/assets/scss/components/tags";
+@import "@/assets/scss/components/buttons";
+
+.past-record-container .toggle-box .toggle-button {
+  &.router-link-exact-active {
+    color: #fff;
+    background-color: #a7ced4;
+    border: 5px solid #e3eaea;
+  }
+}
+</style>
