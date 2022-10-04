@@ -2,9 +2,6 @@
 import data from "@/assets/JSON/works.json";
 import { ref } from "vue";
 const { data: worksList } = data;
-
-// console.log(this.$VueMasonryPlugin);
-// const containerId = "masonryId";
 </script>
 
 <template>
