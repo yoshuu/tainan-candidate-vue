@@ -2,13 +2,21 @@
 import { ref } from "vue";
 
 const isPlay = ref(true);
+const isShow = ref(true);
+
+const disappeared = () => {
+  setTimeout(() => {
+    isShow.value = false;
+  }, 5000);
+};
 </script>
 
 <template>
   <main class="street-map-page">
     <div class="map-page">
       <div
-        :class="isPlay ? 'play-animation' : 'stop-animation'"
+        v-if="isShow"
+        :class="{ 'play-animation': isPlay }"
         class="street-instruct-sign"
       >
         <div class="district-text-container">
@@ -18,11 +26,12 @@ const isPlay = ref(true);
           <img src="@/assets/images/white-arrow.png" alt="" />
         </div>
       </div>
-      <div class="street-map-container">
+      <div class="street-map-container" @mouseenter="disappeared">
         <iframe
           class="street-map-iframe"
           src="https://tainan.olc.tw/lines.html"
           frameborder="0"
+          seamless="seamless"
         ></iframe>
       </div>
     </div>
@@ -32,31 +41,10 @@ const isPlay = ref(true);
 <style scoped lang="scss">
 .street-map-page {
   height: calc(100vh - 75px - 75px);
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-
-  // @media (min-width: 768px) {
-  //   flex-direction: row;
-  //   justify-content: center;
-  //   height: calc(100vh - 77px);
-  // }
 }
 .map-page {
-  // position: relative;
-  // @media (min-width: 768px) {
-  //   padding-top: 5%;
-  //   flex-basis: 50%;
-  // }
-
   .street-map-container {
-    // position: relative;
-    // overflow: hidden;
-    // padding-bottom: calc(657 / 1066 * 100%);
     .street-map-iframe {
-      // position: absolute;
-      // top: 0;
-      // height: 100%;
       bottom: 0;
       width: 100%;
       height: calc(100vh - 75px);
@@ -85,43 +73,29 @@ const isPlay = ref(true);
   justify-content: center;
   gap: 14px;
   // 為了跟里民的長度一樣
-  // width: 192px;
-  width: 240px;
+  width: 192px;
 
   position: absolute;
-  top: 10%;
-  left: 47%;
+  top: 15%;
+  left: 25%;
+
+  @media (min-width: 500px) {
+    left: 30%;
+  }
+
+  @media (min-width: 768px) {
+    width: 240px;
+    left: 47%;
+  }
 
   @media (min-width: 1920px) {
     top: 20%;
     left: 47%;
   }
-
-  // position: absolute;
-  // top: -40%;
-  // left: 25%;
-  // @media (min-width: 400px) {
-  //   top: -40%;
-  //   left: 25%;
-  //   right: 25%;
-  //   bottom: 100%;
-  // }
-
-  // @media (min-width: 450px) {
-  //   width: initial;
-  //   position: unset;
-  //   padding-bottom: 15px;
-  // }
 }
 .play-animation {
   animation-name: bounce;
   animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-
-.stop-animation {
-  animation-name: bounce;
-  animation-duration: 0s;
   animation-iteration-count: infinite;
 }
 
