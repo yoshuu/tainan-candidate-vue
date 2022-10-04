@@ -18,11 +18,7 @@ const isPlay = ref(true);
           <img src="@/assets/images/white-arrow.png" alt="" />
         </div>
       </div>
-      <div
-        @mouseenter="isPlay = !isPlay"
-        @mouseleave="isPlay = !isPlay"
-        class="district-map-container"
-      >
+      <div class="district-map-container">
         <iframe
           class="district-map-iframe"
           src="https://tainan.olc.tw"
@@ -37,35 +33,41 @@ const isPlay = ref(true);
 <style scoped lang="scss">
 .district-map-page {
   height: calc(100vh - 75px - 75px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: center;
-    height: calc(100vh - 77px);
-  }
+  // @media (min-width: 768px) {
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   height: calc(100vh - 77px);
+  // }
 }
 .map-page {
-  position: relative;
+  // position: relative;
 
-  @media (min-width: 768px) {
-    padding-top: 5%;
-    flex-basis: 50%;
-  }
+  // @media (min-width: 768px) {
+  //   padding-top: 5%;
+  //   flex-basis: 50%;
+  // }
 
   .district-map-container {
-    position: relative;
-    overflow: hidden;
-    padding-bottom: calc(657 / 1066 * 100%);
+    // position: relative;
+    // overflow: hidden;
+    // padding-bottom: calc(657 / 1066 * 100%);
 
     .district-map-iframe {
-      position: absolute;
-      top: 0;
+      // position: absolute;
+      // top: 0;
       bottom: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100vh - 75px);
+      // overflow: hidden;
+      // z-index: 2;
+
+      @media (min-width: 992px) {
+        height: calc(100vh - 77px);
+      }
     }
   }
 }
@@ -86,21 +88,30 @@ const isPlay = ref(true);
   align-items: center;
   justify-content: center;
   gap: 14px;
-
   position: absolute;
-  top: -40%;
-  left: 25%;
-  @media (min-width: 400px) {
-    top: -40%;
-    left: 25%;
-    right: 25%;
-    bottom: 100%;
+  top: 10%;
+  left: 47%;
+
+  @media (min-width: 1920px) {
+    top: 20%;
+    left: 47%;
   }
 
-  @media (min-width: 450px) {
-    position: unset;
-    padding-bottom: 15px;
-  }
+  // position: absolute;
+  // z-index: 3;
+  // top: -40%;
+  // left: 25%;
+  // @media (min-width: 400px) {
+  //   top: -40%;
+  //   left: 25%;
+  //   right: 25%;
+  //   bottom: 100%;
+  // }
+
+  // @media (min-width: 450px) {
+  //   position: unset;
+  //   padding-bottom: 15px;
+  // }
 }
 
 .play-animation {
