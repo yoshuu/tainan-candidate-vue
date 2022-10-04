@@ -56,8 +56,6 @@ const isPlay = ref(true);
   }
 
   .district-map-container {
-    // height: 0;
-    // width: 100%;
     position: relative;
     overflow: hidden;
     padding-bottom: calc(657 / 1066 * 100%);
@@ -68,7 +66,6 @@ const isPlay = ref(true);
       bottom: 0;
       width: 100%;
       height: 100%;
-      // border: 0;
     }
   }
 }
