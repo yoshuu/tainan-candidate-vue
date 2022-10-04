@@ -45,19 +45,6 @@ const isPlay = ref(true);
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 77px);
-    // @media (min-width: 992px) {
-    //   margin: 0 10%;
-    // }
-    // @media (min-width: 1440px) {
-    //   margin: 0;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    // }
-    // @media (min-width: 1930px) {
-    //   display: block;
-    //   margin: 0 30%;
-    // }
   }
 }
 .map-page {
@@ -67,25 +54,7 @@ const isPlay = ref(true);
     flex-basis: 50%;
   }
 
-  // padding-top: 40%;
-  // @media (min-width: 450px) {
-  //   padding-top: 30px;
-  // }
-
-  // @media (min-width: 1440px) {
-  //   flex-basis: 803px;
-  // }
-
-  // @media (min-width: 1920px) {
-  //   flex-basis: 1003px;
-  // }
-  // @media (min-width: 1930px) {
-  //   flex-basis: unset;
-  // }
-
   .street-map-container {
-    // height: 0;
-    // width: 100%;
     position: relative;
     overflow: hidden;
     padding-bottom: calc(657 / 1066 * 100%);
@@ -95,7 +64,6 @@ const isPlay = ref(true);
       bottom: 0;
       width: 100%;
       height: 100%;
-      // border: 0;
     }
   }
 }
