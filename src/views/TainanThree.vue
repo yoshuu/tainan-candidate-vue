@@ -470,12 +470,14 @@ watch(width, (newWidth, oldWidth) => {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  // 為了讓台南三江兩側背hidden住
   overflow: hidden;
   transform: translateY(5%);
 
   @media (min-width: 992px) {
     margin-top: 0;
     transform: translateY(12%);
+    // 但是大尺寸要有map-button不能被hidden
     overflow: initial;
   }
 
