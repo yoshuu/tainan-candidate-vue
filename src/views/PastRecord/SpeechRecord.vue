@@ -3,10 +3,8 @@ import data from "@/assets/JSON/data.json";
 const dataJson = data;
 
 function checkLength(array, index) {
-  if (array.length === 0) return "##";
-  if (array.length === 1 && index === 0) return array[0].link;
-  if (array.length === 1 && index === 1) return "##";
-  if (array.length === 2) return array[index].link;
+  if (array.length === 0 || (array.length === 1 && index === 1)) return "##";
+  else return array[index].link;
 }
 </script>
 
@@ -35,13 +33,17 @@ function checkLength(array, index) {
                 >投影片下載</a
               >
               <a
-                target="_blank"
+                :target="
+                  checkLength(record.ytVideos, 0) === '##' ? '_self' : '_blank'
+                "
                 :href="checkLength(record.ytVideos, 0)"
                 class="tags"
                 >影片連結</a
               >
               <a
-                target="_blank"
+                :target="
+                  checkLength(record.ytVideos, 1) === '##' ? '_self' : '_blank'
+                "
                 :href="checkLength(record.ytVideos, 1)"
                 class="tags"
                 >影片連結</a
@@ -107,16 +109,17 @@ function checkLength(array, index) {
   h2 {
     font-weight: 700;
     text-align: center;
-    margin-bottom: 33px;
+    margin-bottom: 13px;
     font-size: 16px;
 
     @media (min-width: 992px) {
       font-size: 36px;
+      margin-bottom: 33px;
     }
   }
   p {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   // 針對past-speech-record
@@ -166,6 +169,7 @@ function checkLength(array, index) {
     flex-direction: column;
     gap: 12px;
     border-bottom: #0000001a 1px solid;
+
     padding: 20px 0;
 
     @media (min-width: 992px) {
@@ -175,6 +179,7 @@ function checkLength(array, index) {
     h3 {
       font-size: 14px;
       font-weight: 700;
+      line-height: 20.27px;
     }
 
     .speech-record-topicNcontent {

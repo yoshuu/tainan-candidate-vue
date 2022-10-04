@@ -19,7 +19,7 @@
   --offset: 300px;
   position: sticky;
   bottom: 10px;
-  left: 10px;
+  left: calc(100vw - 20%);
   margin-top: calc(100vh + var(--offset));
   text-decoration: none;
   font-size: 20px;
@@ -31,8 +31,7 @@
   border-radius: 30px;
 
   @media (min-width: 768px) {
-    bottom: 10%;
-    left: 10%;
+    left: calc(100vw - 15%);
 
     &:hover {
       background: #a7ced4;

@@ -34,11 +34,15 @@ const { data: worksList } = data;
           <div class="bottom-line"></div>
           <div class="news-title">相關報導</div>
           <div class="news-box">
-            <a class="news-item">ETtoday</a>
-            <a class="news-item">遠見</a>
-            <a class="news-item">健康2.0</a>
-            <a class="news-item">聯合新聞網</a>
-            <a class="news-item">電獺少女</a>
+            <template v-for="news in item.news" :key="news.link">
+              <a
+                class="news-item"
+                v-if="news.media"
+                :href="news.link"
+                target="_blank"
+                >{{ news.media }}</a
+              >
+            </template>
           </div>
         </div>
       </div>
