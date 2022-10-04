@@ -10,13 +10,13 @@
     position: absolute;
     right: -21%;
     top: 10%;
+    left: 100%;
+    bottom: 60%;
   }
 
   @media (min-width: 1920px) {
     width: 245px;
     height: 215px;
-    right: -21%;
-    top: 10%;
   }
 
   background-image: url(@/assets/images/mapButton.png);
