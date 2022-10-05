@@ -1,14 +1,20 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const isPlay = ref(true);
 const isShow = ref(true);
 
-const disappeared = () => {
+// const disappeared = () => {
+//   setTimeout(() => {
+//     isShow.value = false;
+//   }, 5000);
+// };
+
+onMounted(() => {
   setTimeout(() => {
     isShow.value = false;
   }, 5000);
-};
+});
 </script>
 
 <template>
