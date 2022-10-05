@@ -180,7 +180,7 @@ header {
     font-weight: 700;
     font-size: 14px;
     color: black;
-    padding: 5px 15px;
+    padding: 10px 15px;
 
     &:hover,
     &-hover {
