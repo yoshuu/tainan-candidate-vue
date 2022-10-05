@@ -26,7 +26,7 @@ const { data: worksList } = data;
         <div class="project-content">
           <a :href="item.portfolio.link" class="theme" target="_blank">
             <h3>{{ item.portfolio.title }}</h3>
-            <img src="@ }/assets/images/github-icon.png" />
+            <img src="@/assets/images/github-icon.png" />
           </a>
           <div class="bottom-line"></div>
           <div class="news-title">相關報導</div>
