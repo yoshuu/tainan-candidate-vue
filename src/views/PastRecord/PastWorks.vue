@@ -1,6 +1,6 @@
 <script setup>
 import data from "@/assets/JSON/works.json";
-import { ref } from "vue";
+
 const { data: worksList } = data;
 </script>
 
@@ -19,10 +19,8 @@ const { data: worksList } = data;
         v-for="item in worksList"
         :key="item.portfolio.link"
       >
-        <img
-          class="project-img"
-          :src="`/src/assets/${item.portfolio.imgUrl}`"
-        />
+        <img class="project-img" :src="item.portfolio.imgUrl" />
+
         <div class="project-content">
           <a :href="item.portfolio.link" class="theme" target="_blank">
             <h3>{{ item.portfolio.title }}</h3>
