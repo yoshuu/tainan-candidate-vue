@@ -1,7 +1,5 @@
 <script setup>
 import { ref } from "vue";
-
-const navbarHeight = ref("");
 </script>
 
 <template>
@@ -117,7 +115,7 @@ const navbarHeight = ref("");
 @import "../assets/scss/components/_declaration";
 .front-page-container {
   display: flex;
-  height: calc(100vh - 75px - 75px);
+  height: calc(100vh - 75px);
 
   @media (min-width: 992px) {
     height: calc(100vh - 77px);
@@ -171,8 +169,8 @@ const navbarHeight = ref("");
   // left: 170px;
   // top: 50px;
 
-  top: 5%;
-  left: 50%;
+  top: 10%;
+  left: 55%;
 
   @media (min-width: 390px) {
     left: 55%;

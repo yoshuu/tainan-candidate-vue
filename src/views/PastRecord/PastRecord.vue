@@ -33,7 +33,8 @@ import { RouterLink, RouterView } from "vue-router";
       <RouterView />
     </div>
   </main>
-  <a href="#" class="top"
+
+  <a href="#past-work" class="top"
     >Top<svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"
