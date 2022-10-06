@@ -1,14 +1,19 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const isPlay = ref(true);
 const isShow = ref(true);
 
-const disappeared = () => {
+onMounted(() => {
   setTimeout(() => {
     isShow.value = false;
   }, 5000);
-};
+});
+// const disappeared = () => {
+//   setTimeout(() => {
+//     isShow.value = false;
+//   }, 5000);
+// };
 </script>
 
 <template>
@@ -26,7 +31,7 @@ const disappeared = () => {
           <img src="@/assets/images/white-arrow.png" alt="" />
         </div>
       </div>
-      <div class="district-map-container" @mouseenter="disappeared">
+      <div class="district-map-container">
         <iframe
           class="district-map-iframe"
           src="https://tainan.olc.tw"
