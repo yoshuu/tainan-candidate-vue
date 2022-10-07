@@ -433,8 +433,8 @@ watch(width, (newWidth, oldWidth) => {
             </div>
             <div class="modal-body">
               <iframe
-                width="1920px"
-                height="1080px"
+                width="100%"
+                height="100%"
                 src="https://tainan.olc.tw/street.html"
                 frameborder="0"
                 seamless
@@ -716,6 +716,7 @@ watch(width, (newWidth, oldWidth) => {
   }
   .modal-header {
     padding: 10px 20px;
+    background-color: transparent;
   }
 }
 </style>
