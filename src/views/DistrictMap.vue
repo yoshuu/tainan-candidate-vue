@@ -1,5 +1,8 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed, watch } from "vue";
+import { useWindowSize } from "@vueuse/core";
+
+const { width, height } = useWindowSize();
 
 const isPlay = ref(true);
 const isShow = ref(true);
@@ -9,11 +12,19 @@ onMounted(() => {
     isShow.value = false;
   }, 5000);
 });
-// const disappeared = () => {
-//   setTimeout(() => {
-//     isShow.value = false;
-//   }, 5000);
-// };
+
+const zoom = ref("");
+const zoomChange = computed(() => {
+  return `https://tainan.olc.tw/#/zoom/${zoom.value}`;
+});
+
+watch(width, (newWidth, oldWidth) => {
+  if (newWidth <= 576) {
+    zoom.value = 13;
+  } else {
+    zoom.value = 14;
+  }
+});
 </script>
 
 <template>
@@ -34,7 +45,7 @@ onMounted(() => {
       <div class="district-map-container">
         <iframe
           class="district-map-iframe"
-          src="https://tainan.olc.tw"
+          :src="zoomChange"
           frameborder="0"
           allowfullscreen
           seamless="seamless"
@@ -78,22 +89,17 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   gap: 14px;
+  width: 100%;
 
   position: absolute;
-  top: 15%;
-  left: 25%;
+  top: 30%;
 
-  @media (min-width: 500px) {
-    left: 30%;
-  }
-
-  @media (min-width: 768px) {
-    left: 47%;
+  @media (min-width: 576px) {
+    top: 15%;
   }
 
   @media (min-width: 1920px) {
     top: 20%;
-    left: 47%;
   }
 }
 
