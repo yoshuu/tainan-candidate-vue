@@ -496,9 +496,9 @@ watch(width, (newWidth, oldWidth) => {
     overflow: initial;
   }
 
-  @media (min-width: 1920px) {
-    transform: translateY(17%);
-  }
+  // @media (min-width: 1920px) {
+  //   transform: translateY(17%);
+  // }
 
   // hover時的動畫
   &:hover .people-name {
@@ -534,9 +534,9 @@ watch(width, (newWidth, oldWidth) => {
       @include size(100%, calc(100vh - 77px));
     }
 
-    // @media (min-width: 1920px) {
-    //   @include size(100%, 100%);
-    // }
+    @media (min-width: 1920px) {
+      @include size(100%, 100vh);
+    }
   }
 }
 
