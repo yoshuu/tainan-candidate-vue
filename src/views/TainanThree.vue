@@ -5,11 +5,25 @@ import { useWindowSize } from "@vueuse/core";
 const { width } = useWindowSize();
 const isCentered = ref(null);
 
+const zoom = ref("");
+const zoomChange = computed(() => {
+  return `https://tainan.olc.tw/street.html#/zoom/${zoom.value}`;
+});
+
 watch(width, (newWidth, oldWidth) => {
   if (newWidth >= 576) {
     isCentered.value = true;
   } else {
     isCentered.value = false;
+  }
+
+  if (newWidth <= 576) {
+    zoom.value = 13;
+    console.log("576", zoom.value);
+  } else {
+    console.log("else");
+    zoom.value = 15;
+    console.log("else", zoom.value);
   }
 });
 </script>
@@ -435,7 +449,7 @@ watch(width, (newWidth, oldWidth) => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://tainan.olc.tw/street.html"
+                :src="zoomChange"
                 frameborder="0"
                 seamless
               ></iframe>
@@ -473,6 +487,7 @@ watch(width, (newWidth, oldWidth) => {
   // 為了讓台南三江兩側背hidden住
   overflow: hidden;
   transform: translateY(5%);
+  // transform: translateY(12%);
 
   @media (min-width: 992px) {
     margin-top: 0;
@@ -482,7 +497,7 @@ watch(width, (newWidth, oldWidth) => {
   }
 
   @media (min-width: 1920px) {
-    transform: translateY(4%);
+    transform: translateY(17%);
   }
 
   // hover時的動畫
@@ -519,9 +534,9 @@ watch(width, (newWidth, oldWidth) => {
       @include size(100%, calc(100vh - 77px));
     }
 
-    @media (min-width: 1920px) {
-      @include size(100%, 100%);
-    }
+    // @media (min-width: 1920px) {
+    //   @include size(100%, 100%);
+    // }
   }
 }
 
