@@ -19,11 +19,11 @@ watch(width, (newWidth, oldWidth) => {
 
   if (newWidth <= 576) {
     zoom.value = 13;
-    console.log("576", zoom.value);
+    // console.log("576", zoom.value);
   } else {
-    console.log("else");
+    // console.log("else");
     zoom.value = 15;
-    console.log("else", zoom.value);
+    // console.log("else", zoom.value);
   }
 });
 </script>
@@ -472,14 +472,15 @@ watch(width, (newWidth, oldWidth) => {
 
 .tainan-container {
   position: relative;
-  height: calc(100vh - 75px - 75px);
+  // height: calc(100vh - 75px - 75px);
 
-  @media (min-width: 1920px) {
-    height: calc(100vh - 77px);
-  }
+  // @media (min-width: 1920px) {
+  //   height: calc(100vh - 77px);
+  // }
 }
 
 .tainan-three {
+  // 小尺寸讓他變成flex
   position: relative;
   display: flex;
   flex-direction: column;
@@ -491,14 +492,25 @@ watch(width, (newWidth, oldWidth) => {
 
   @media (min-width: 992px) {
     margin-top: 0;
-    transform: translateY(12%);
-    // 但是大尺寸要有map-button不能被hidden
+    transform: translateY(17%);
+    // 大尺寸要有map-button不能被hidden
     overflow: initial;
   }
 
-  // @media (min-width: 1920px) {
-  //   transform: translateY(17%);
-  // }
+  .tainan-three-img {
+    object-fit: contain;
+    align-self: center;
+
+    @include size(120%, 120%);
+
+    @media (min-width: 992px) {
+      @include size(100%, calc(100vh - 77px));
+    }
+
+    @media (min-width: 1920px) {
+      @include size(100%, 100vh);
+    }
+  }
 
   // hover時的動畫
   &:hover .people-name {
@@ -521,21 +533,6 @@ watch(width, (newWidth, oldWidth) => {
     to {
       transform: translateY(0px);
       animation-timing-function: ease-in-out;
-    }
-  }
-
-  .tainan-three-img {
-    object-fit: contain;
-    align-self: center;
-
-    @include size(120%, 120%);
-
-    @media (min-width: 992px) {
-      @include size(100%, calc(100vh - 77px));
-    }
-
-    @media (min-width: 1920px) {
-      @include size(100%, 100vh);
     }
   }
 }
