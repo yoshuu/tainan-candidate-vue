@@ -1,10 +1,25 @@
 <script setup>
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch, onMounted } from "vue";
 import { useWindowSize } from "@vueuse/core";
 
-const { width } = useWindowSize();
+onMounted(() => {
+  enterWindowWidth();
+});
+
 const isCentered = ref(null);
 
+const windowInnerWidth = ref(window.innerWidth);
+const enterWindowWidth = () => {
+  if (windowInnerWidth.value <= 576) {
+    console.log("smaller than 576px", windowInnerWidth.value);
+    zoom.value = 13;
+  } else {
+    console.log("else", windowInnerWidth.value);
+    zoom.value = 15;
+  }
+};
+
+const { width } = useWindowSize();
 const zoom = ref("");
 const zoomChange = computed(() => {
   return `https://tainan.olc.tw/street.html#/zoom/${zoom.value}`;
@@ -19,11 +34,8 @@ watch(width, (newWidth, oldWidth) => {
 
   if (newWidth <= 576) {
     zoom.value = 13;
-    // console.log("576", zoom.value);
   } else {
-    // console.log("else");
     zoom.value = 15;
-    // console.log("else", zoom.value);
   }
 });
 </script>
