@@ -12,7 +12,7 @@ const windowInnerWidth = ref(window.innerWidth);
 const enterWindowWidth = () => {
   if (windowInnerWidth.value <= 576) {
     console.log("smaller than 576px", windowInnerWidth.value);
-    zoom.value = 13;
+    zoom.value = 14;
   } else {
     console.log("else", windowInnerWidth.value);
     zoom.value = 15;
