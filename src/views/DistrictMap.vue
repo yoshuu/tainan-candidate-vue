@@ -104,7 +104,7 @@ watch(width, (newWidth, oldWidth) => {
   width: 100%;
 
   position: absolute;
-  top: 30%;
+  top: 25%;
 
   @media (min-width: 576px) {
     top: 15%;
