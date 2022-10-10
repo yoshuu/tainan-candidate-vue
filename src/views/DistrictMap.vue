@@ -2,8 +2,6 @@
 import { onMounted, ref, computed, watch } from "vue";
 import { useWindowSize } from "@vueuse/core";
 
-const { width, height } = useWindowSize();
-
 const isPlay = ref(true);
 const isShow = ref(true);
 
@@ -12,6 +10,20 @@ onMounted(() => {
     isShow.value = false;
   }, 5000);
 });
+
+onMounted(() => {
+  enterWindowWidth();
+});
+
+const { width, height } = useWindowSize();
+const windowInnerWidth = ref(window.innerWidth);
+const enterWindowWidth = () => {
+  if (windowInnerWidth.value <= 576) {
+    zoom.value = 13;
+  } else {
+    zoom.value = 14;
+  }
+};
 
 const zoom = ref("");
 const zoomChange = computed(() => {

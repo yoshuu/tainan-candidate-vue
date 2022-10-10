@@ -7,4 +7,4 @@ const app = createApp(App);
 
 app.use(router).use(VueMasonryPlugin).mount("#app");
 
-// app.config.globalProperties.window = window;
+app.config.globalProperties.window = window;
