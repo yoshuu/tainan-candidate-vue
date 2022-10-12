@@ -7,7 +7,7 @@
         <div class="container-fluid p-0">
           <RouterLink class="navbar-brand candidate-logo" to="/"
             ><img
-              src="@/assets/images/navbar-candidate-logo-1x.png"
+              src="@/assets/images/navbar-candidate-logo-3x.png"
               alt="navbar-candidate-logo"
           /></RouterLink>
           <div class="collapse navbar-collapse" id="navbarText">
@@ -78,7 +78,7 @@
               href="https://www.tpp.org.tw/"
               target="_blank"
               ><img
-                src="@/assets/images/navbar-party-logo-1x.png"
+                src="@/assets/images/navbar-party-logo-3x.png"
                 alt="navbar-candidate-logo"
             /></a>
           </div>
@@ -88,7 +88,7 @@
         <div class="brand-container">
           <RouterLink class="navbar-brand candidate-logo" to="/"
             ><img
-              src="@/assets/images/navbar-candidate-logo-1x.png"
+              src="@/assets/images/navbar-candidate-logo-3x.png"
               alt="navbar-candidate-logo"
           /></RouterLink>
           <a
@@ -96,7 +96,7 @@
             href="https://www.tpp.org.tw/"
             target="_blank"
             ><img
-              src="@/assets/images/navbar-party-logo-1x.png"
+              src="@/assets/images/navbar-party-logo-3x.png"
               alt="navbar-candidate-logo"
           /></a>
         </div>
@@ -227,7 +227,7 @@ header {
     }
 
     background-color: $header;
-    padding: 10px 40px;
+    padding: 12.31px 40.37px;
 
     .navbar-brand {
       height: 56px;
@@ -252,7 +252,7 @@ header {
     .brand-container {
       display: flex;
       justify-content: space-between;
-      padding: 7px 12px;
+      padding: 9.15px 12.19px;
 
       .navbar-brand {
         height: 30px;
@@ -261,6 +261,7 @@ header {
 
     .navbar-nav {
       flex-direction: row;
+      justify-content: space-between;
       overflow: auto;
 
       &::-webkit-scrollbar {
