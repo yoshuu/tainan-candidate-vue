@@ -1,35 +1,29 @@
-# tainan-candidate
+# 江明宗 - 台灣民眾黨 北中西區台南市議員參選人
 
-This template should help get you started developing with Vue 3 in Vite.
+介紹江明宗參選人的宣言、選區里民資料，以及過往紀錄作品等等。
 
-## Recommended IDE Setup
+## Title
+* 誰是江明宗
+* 選區里民資料
+* 掃街紀錄
+* 過往紀錄
+* 台南三江街講
+* 透過臉書聯絡江明宗
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Introduction
 
-## Customize configuration
+初次使用 Vue 3 框架，嘗試使用 Vue Router, Vue masonry, VueUse 等功能達成與設計稿一致的狀態。
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Technology
 
-## Project Setup
+* Vue3 + Vite
+* Vue masonry
+* Vue Router
+* VueUse
+* Bootstrap 5.2.1
+* SCSS
 
-```sh
-npm install
-```
+## Launch
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
