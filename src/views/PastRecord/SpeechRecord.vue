@@ -3,7 +3,7 @@ import data from "@/assets/JSON/data.json";
 const dataJson = data;
 
 function checkLength(array, index) {
-  if (array.length === 0 || (array.length === 1 && index === 1)) return "##";
+  if (array.length === 0 || (array.length === 1 && index === 1)) return;
   else return array[index].link;
 }
 </script>
@@ -33,17 +33,13 @@ function checkLength(array, index) {
                 >投影片下載</a
               >
               <a
-                :target="
-                  checkLength(record.ytVideos, 0) === '##' ? '_self' : '_blank'
-                "
+                :target="'_blank'"
                 :href="checkLength(record.ytVideos, 0)"
                 class="tags"
                 >影片連結</a
               >
               <a
-                :target="
-                  checkLength(record.ytVideos, 1) === '##' ? '_self' : '_blank'
-                "
+                :target="'_blank'"
                 :href="checkLength(record.ytVideos, 1)"
                 class="tags"
                 >影片連結</a
