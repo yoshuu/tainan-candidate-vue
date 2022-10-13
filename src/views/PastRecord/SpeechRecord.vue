@@ -116,6 +116,10 @@ function checkLength(array, index) {
   p {
     font-size: 14px;
     font-weight: 400;
+
+    @media (min-width: 992px) {
+      font-weight: 500;
+    }
   }
 
   // 針對past-speech-record
