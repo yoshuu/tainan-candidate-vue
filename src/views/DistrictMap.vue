@@ -27,7 +27,7 @@ const enterWindowWidth = () => {
 
 const zoom = ref("");
 const zoomChange = computed(() => {
-  return `https://tainan.olc.tw/#/zoom/${zoom.value}`;
+  return `https://tainan.olc.tw/cunli.html#/zoom/${zoom.value}`;
 });
 
 watch(width, (newWidth, oldWidth) => {
