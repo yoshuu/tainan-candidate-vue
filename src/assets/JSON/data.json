@@ -357,7 +357,7 @@
     },
     {
       "slides": {
-        "link": "pdf/206_disaster_it_tainan.pdf",
+        "link": "kiang-github/pdf/206_disaster_it_tainan.pdf",
         "title": "資訊系統參與救災"
       },
       "active": "台北市政府 災害救助研習班",
@@ -389,7 +389,7 @@
     },
     {
       "slides": {
-        "link": "pdf/dengue_fever_map.pdf",
+        "link": "kiang-github/pdf/dengue_fever_map.pdf",
         "title": "登革熱地圖的那些日子"
       },
       "active": "高雄open data培訓",
@@ -398,7 +398,7 @@
     },
     {
       "slides": {
-        "link": "pdf/drugs_tw_phpconf_2015.pdf",
+        "link": "kiang-github/pdf/drugs_tw_phpconf_2015.pdf",
         "title": "DRUGS.OLC.TW - 藥要看"
       },
       "active": "PHPConf Taiwan 2015",
@@ -407,7 +407,7 @@
     },
     {
       "slides": {
-        "link": "pdf/crowdsourcing_dengue_fever_tainan.pdf",
+        "link": "kiang-github/pdf/crowdsourcing_dengue_fever_tainan.pdf",
         "title": "CROWDSOURCING & DENGUE FEVER IN TAINAN"
       },
       "active": "Taiwan & Thailand Open Data Hackathon",
@@ -416,7 +416,7 @@
     },
     {
       "slides": {
-        "link": "pdf/elections_tca.pdf",
+        "link": "kiang-github/pdf/elections_tca.pdf",
         "title": "選舉黃頁"
       },
       "active": "2015 Open Data創新應用競賽",
@@ -425,7 +425,7 @@
     },
     {
       "slides": {
-        "link": "pdf/elections_olctw.pdf",
+        "link": "kiang-github/pdf/elections_olctw.pdf",
         "title": "選舉黃頁的過去、現在與未來"
       },
       "active": "中央選舉委員會",
