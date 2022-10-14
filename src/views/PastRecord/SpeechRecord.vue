@@ -3,7 +3,7 @@ import data from "@/assets/JSON/data.json";
 const dataJson = data;
 
 function checkLength(array, index) {
-  if (array.length === 0 || (array.length === 1 && index === 1)) return;
+  if (array.length === 0 || (array.length === 1 && index === 1)) return false;
   else return array[index].link;
 }
 </script>
@@ -29,19 +29,24 @@ function checkLength(array, index) {
             <p>{{ record.active }}</p>
             <p>{{ record.date }}</p>
             <div class="resources-content">
-              <a target="_blank" :href="record.slides.link" class="tags"
+              <a
+                target="_blank"
+                :href="record.slides.link"
+                class="tags tags--normal"
                 >投影片下載</a
               >
               <a
-                :target="'_blank'"
-                :href="checkLength(record.ytVideos, 0)"
-                class="tags"
+                v-if="checkLength(record.ytVideos, 0)"
+                target="_blank"
+                :href="record.ytVideos[0].link"
+                class="tags tags--normal"
                 >影片連結</a
               >
               <a
-                :target="'_blank'"
-                :href="checkLength(record.ytVideos, 1)"
-                class="tags"
+                v-if="checkLength(record.ytVideos, 1)"
+                target="_blank"
+                :href="record.ytVideos[1].link"
+                class="tags tags--normal"
                 >影片連結</a
               >
             </div>
@@ -67,19 +72,24 @@ function checkLength(array, index) {
           <div class="speech-record-resources-topicNcontent">
             <h3>相關資源</h3>
             <div class="resources-content">
-              <a target="_blank" :href="record.slides.link" class="tags"
+              <a
+                target="_blank"
+                :href="record.slides.link"
+                class="tags tags--normal"
                 >投影片下載</a
               >
               <a
+                v-if="checkLength(record.ytVideos, 0)"
                 target="_blank"
-                :href="checkLength(record.ytVideos, 0)"
-                class="tags"
+                :href="record.ytVideos[0].link"
+                class="tags tags--normal"
                 >影片連結</a
               >
               <a
+                v-if="checkLength(record.ytVideos, 1)"
                 target="_blank"
-                :href="checkLength(record.ytVideos, 1)"
-                class="tags"
+                :href="record.ytVideos[1].link"
+                class="tags tags--normal"
                 >影片連結</a
               >
             </div>
@@ -157,7 +167,7 @@ function checkLength(array, index) {
         .resources-content {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          // justify-content: space-between;
           gap: 10px;
         }
       }
@@ -195,7 +205,12 @@ function checkLength(array, index) {
       .resources-content {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        gap: 9px;
+
+        @media (min-width: 576px) {
+          gap: 20px;
+        }
+        // justify-content: space-between;
       }
     }
   }

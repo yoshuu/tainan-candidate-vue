@@ -514,7 +514,7 @@ watch(width, (newWidth, oldWidth) => {
     @include size(120%, 120%);
 
     @media (min-width: 992px) {
-      @include size(100%, calc(100vh - 77px));
+      @include size(100%, calc(100vh - 81.609px));
     }
 
     @media (min-width: 1920px) {

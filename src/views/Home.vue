@@ -115,10 +115,10 @@ import { ref } from "vue";
 @import "../assets/scss/components/_declaration";
 .front-page-container {
   display: flex;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 89.3px);
 
   @media (min-width: 992px) {
-    height: calc(100vh - 77px);
+    height: calc(100vh - 81.609px);
   }
 }
 
@@ -143,10 +143,10 @@ import { ref } from "vue";
     // 讓圖片頂到最高
     // height: calc(100vh - 75px);
     // 小尺寸= 100vh - navbar高度 - 跟navbar距離的距離
-    height: calc(100vh - 75px - 94.19px);
+    height: calc(100vh - 89.3px - 94.19px);
 
     @media (min-width: 992px) {
-      height: calc(100vh - 77px);
+      height: calc(100vh - 81.609px);
     }
   }
 }

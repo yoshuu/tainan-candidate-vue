@@ -252,7 +252,7 @@ header {
     .brand-container {
       display: flex;
       justify-content: space-between;
-      padding: 9.15px 12.19px;
+      padding: 9.15px 12.18px;
 
       .navbar-brand {
         height: 30px;
