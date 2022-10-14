@@ -25,6 +25,15 @@
                 <RouterLink
                   class="nav-link"
                   :to="{
+                    name: 'Politics',
+                  }"
+                  >政見</RouterLink
+                >
+              </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="nav-link"
+                  :to="{
                     name: 'DistrictMap',
                   }"
                   >選區里民資料</RouterLink
@@ -109,6 +118,16 @@
               }"
               >誰是江明宗</RouterLink
             >
+          </li>
+          <li class="nav-item">
+            <RouterLink
+              class="nav-link"
+              :to="{
+                name: 'Politics',
+              }"
+              >政見</RouterLink
+            >
+            
           </li>
           <li class="nav-item">
             <RouterLink
