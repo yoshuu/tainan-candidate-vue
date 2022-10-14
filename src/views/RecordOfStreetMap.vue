@@ -68,17 +68,17 @@ watch(width, (newWidth, oldWidth) => {
 
 <style scoped lang="scss">
 .street-map-page {
-  height: calc(100vh - 75px - 75px);
+  height: calc(100vh - 89.3px);
 }
 .map-page {
   .street-map-container {
     .street-map-iframe {
       bottom: 0;
       width: 100%;
-      height: calc(100vh - 75px);
+      height: calc(100vh - 89.3px);
 
       @media (min-width: 992px) {
-        height: calc(100vh - 77px);
+        height: calc(100vh - 81.609px);
       }
     }
   }
