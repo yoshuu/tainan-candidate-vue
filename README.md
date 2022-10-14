@@ -25,5 +25,5 @@
 
 ## Launch
 
-https://yoshuu.github.io/tainan-candidate-vue/#/
+https://tainan.olc.tw/#/
 
