@@ -10,6 +10,12 @@ const router = createRouter({
       component: Home,
     },
     {
+      path: "/Politics",
+      name: "Politics",
+
+      component: () => import("@/views/Politics.vue"),
+    },
+    {
       path: "/DistrictMap",
       name: "DistrictMap",
 
