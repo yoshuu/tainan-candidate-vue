@@ -18,6 +18,12 @@
     right: -40px;
   }
 
+  .politics.content-container {
+    height: calc(100vh - 200px);
+    overflow: scroll;
+    padding: 40px;
+  }
+
   .content-container {
     height: calc(100vh - 200px);
     overflow: scroll;
