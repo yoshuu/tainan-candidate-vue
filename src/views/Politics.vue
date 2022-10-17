@@ -18,10 +18,21 @@ import { ref } from "vue";
               <div class="twoTape">
                 <img src="@/assets/images/type.png" alt="type" />
               </div>
-              <div class="content-container">
+              <div class="content-container politics">
                 <div class="content">
-                  <img src="@/assets/images/politics.jpg" alt="politics" class="politics-img" />
-                  <iframe class="politics-video" src="https://www.youtube.com/embed/QqGQ21UenCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <img
+                    src="@/assets/images/politics.jpg"
+                    alt="politics"
+                    class="politics-img"
+                  />
+                  <iframe
+                    class="politics-video"
+                    src="https://www.youtube.com/embed/QqGQ21UenCI"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -31,7 +42,10 @@ import { ref } from "vue";
             data-bs-toggle="modal"
             data-bs-target="#candidate-about-politics-modal"
           >
-            <img src="@/assets/images/about-politics.png" alt="about politics btn" />
+            <img
+              src="@/assets/images/about-politics.png"
+              alt="about politics btn"
+            />
           </div>
           <div
             class="modal fade"
@@ -51,8 +65,19 @@ import { ref } from "vue";
                 </div>
                 <div class="modal-body">
                   <div class="content">
-                    <img src="@/assets/images/politics.jpg" alt="politics" class="politics-img" />
-                    <iframe class="politics-video" src="https://www.youtube.com/embed/QqGQ21UenCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <img
+                      src="@/assets/images/politics.jpg"
+                      alt="politics"
+                      class="politics-img"
+                    />
+                    <iframe
+                      class="politics-video"
+                      src="https://www.youtube.com/embed/QqGQ21UenCI"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
                   </div>
                 </div>
               </div>
@@ -118,13 +143,13 @@ import { ref } from "vue";
 }
 
 .politics-img {
-    object-fit: contain;
-    width: 100%;
+  object-fit: contain;
+  width: 100%;
 }
 
 .politics-video {
-    width: 100%;
-    @media (min-width: 992px) {
+  width: 100%;
+  @media (min-width: 992px) {
     height: 500px;
   }
   @media (min-width: 1920px) {
