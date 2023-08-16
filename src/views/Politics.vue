@@ -137,9 +137,9 @@ import { ref } from "vue";
     align-self: center;
     flex-basis: 880px;
   }
-  @media (min-width: 1920px) {
-    height: initial;
-  }
+  // @media (min-width: 1920px) {
+  //   height: initial;
+  // }
 }
 
 .politics-img {
